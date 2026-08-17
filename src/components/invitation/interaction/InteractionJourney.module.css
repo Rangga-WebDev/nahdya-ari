@@ -1,0 +1,961 @@
+/**
+ * =========================================================
+ *    MODULE 07 — RSVP / GUEST BOOK / WEDDING GIFT
+ *    =========================================================
+ *
+ * @format
+ */
+
+.journey {
+  position: relative;
+
+  background: linear-gradient(
+    180deg,
+    var(--paper),
+    var(--paper-light) 30%,
+    var(--paper)
+  );
+
+  color: var(--ink);
+
+  overflow: clip;
+}
+
+.veil {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 40svh;
+
+  background: linear-gradient(180deg, var(--paper), transparent);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+.paperTexture {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.5;
+
+  background-image: radial-gradient(
+    rgba(144, 116, 60, 0.08) 0.5px,
+    transparent 0.5px
+  );
+
+  background-size: 4px 4px;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SCENE SHELL
+   ========================================================= */
+
+.scene {
+  position: relative;
+
+  z-index: 2;
+
+  padding: clamp(4.5rem, 13vh, 9rem) var(--page-padding);
+}
+
+.sceneInner {
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+}
+
+.sceneHeader {
+  text-align: center;
+
+  margin-bottom: clamp(2.5rem, 7vh, 4.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 1.4rem;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.titleMask {
+  overflow: hidden;
+
+  padding-bottom: 0.1em;
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2.1rem, 6.4vw, 4rem);
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.03em;
+
+  color: var(--sogan-dark);
+}
+
+.rule {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.9rem;
+
+  margin: clamp(1.4rem, 4vh, 2.2rem) 0;
+}
+
+.rule span {
+  display: block;
+
+  width: clamp(2.5rem, 12vw, 6rem);
+
+  height: 1px;
+
+  background: rgba(144, 116, 60, 0.4);
+}
+
+.rule i {
+  font-style: normal;
+
+  font-size: 0.6rem;
+
+  color: var(--gold-deep);
+}
+
+.sceneMessage {
+  margin: 0 auto;
+
+  max-width: 32rem;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+
+  line-height: 1.8;
+
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   STATIONERY PANEL
+   ========================================================= */
+
+.stationery {
+  position: relative;
+
+  width: min(100%, 34rem);
+
+  margin-inline: auto;
+
+  padding: clamp(1.8rem, 5vw, 3rem);
+
+  background: rgba(250, 247, 240, 0.72);
+
+  border: 1px solid rgba(144, 116, 60, 0.22);
+
+  box-shadow: 0 20px 60px -45px rgba(40, 51, 38, 0.6);
+}
+
+.stationery::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0.45rem;
+
+  border: 1px solid rgba(144, 116, 60, 0.16);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.form {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(1.5rem, 4vw, 2rem);
+}
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+}
+
+.fieldset {
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+}
+
+.label {
+  display: block;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.input {
+  width: 100%;
+
+  padding: 0.65rem 0 0.55rem;
+
+  border: 0;
+
+  border-bottom: 1px solid rgba(39, 42, 34, 0.24);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.15rem;
+
+  transition:
+    border-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+.input:hover {
+  border-bottom-color: rgba(144, 116, 60, 0.5);
+}
+
+.input:focus {
+  outline: none;
+
+  border-bottom-color: var(--gold-deep);
+
+  box-shadow: 0 1px 0 0 var(--gold-deep);
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input:disabled {
+  opacity: 0.5;
+}
+
+.textarea {
+  resize: vertical;
+
+  min-height: 4.5rem;
+
+  line-height: 1.6;
+}
+
+.hint {
+  margin: 0;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--muted);
+}
+
+/* =========================================================
+   CHOICES
+   ========================================================= */
+
+.choices {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem 1.6rem;
+
+  margin-top: 0.9rem;
+}
+
+.choice {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  cursor: pointer;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.05rem;
+
+  color: var(--ink-soft);
+}
+
+.choice input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.choiceMark {
+  display: grid;
+
+  width: 0.85rem;
+  height: 0.85rem;
+
+  place-items: center;
+
+  border: 1px solid rgba(144, 116, 60, 0.55);
+
+  border-radius: 50%;
+
+  transition: box-shadow 300ms ease;
+}
+
+.choiceMark::after {
+  content: "";
+
+  width: 0.4rem;
+  height: 0.4rem;
+
+  border-radius: 50%;
+
+  background: var(--gold-deep);
+
+  transform: scale(0);
+
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.choice input:checked + .choiceMark::after {
+  transform: scale(1);
+}
+
+.choice input:checked ~ span {
+  color: var(--sogan-dark);
+}
+
+.choice input:focus-visible + .choiceMark {
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.35);
+}
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+.counter {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 1.4rem;
+
+  margin-top: 0.6rem;
+}
+
+.counterButton {
+  display: grid;
+
+  width: 2.4rem;
+  height: 2.4rem;
+
+  place-items: center;
+
+  border: 1px solid rgba(144, 116, 60, 0.4);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--sogan-dark);
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    transform 300ms ease;
+}
+
+.counterButton:hover:not(:disabled) {
+  border-color: var(--gold-deep);
+
+  background: rgba(196, 163, 90, 0.12);
+
+  transform: translateY(-2px);
+}
+
+.counterButton:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+.counterButton:focus-visible {
+  outline: 1px solid var(--gold-deep);
+
+  outline-offset: 3px;
+}
+
+.counterValue {
+  min-width: 2ch;
+
+  text-align: center;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.8rem;
+
+  color: var(--sogan-dark);
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.submit,
+.giftAction {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  align-self: center;
+
+  min-width: 12rem;
+
+  padding: 0.85rem 1rem 0.85rem 1.4rem;
+
+  border: 1px solid var(--sogan-dark);
+
+  border-radius: var(--radius-pill);
+
+  background: transparent;
+
+  color: var(--sogan-dark);
+
+  cursor: pointer;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 320ms ease,
+    background 320ms ease,
+    color 320ms ease;
+}
+
+.submit:hover:not(:disabled),
+.giftAction:hover {
+  transform: translateY(-3px);
+
+  background: var(--sogan-dark);
+
+  color: var(--ivory);
+}
+
+.submit:focus-visible,
+.giftAction:focus-visible,
+.quietAction:focus-visible {
+  outline: 1px solid var(--gold-deep);
+
+  outline-offset: 4px;
+}
+
+.submit:disabled {
+  opacity: 0.55;
+
+  cursor: progress;
+}
+
+.submitIcon {
+  display: grid;
+
+  width: 1.6rem;
+  height: 1.6rem;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(196, 163, 90, 0.18);
+
+  color: var(--gold-deep);
+
+  transition: transform 320ms ease;
+}
+
+.submit:hover:not(:disabled) .submitIcon,
+.giftAction:hover .submitIcon {
+  transform: translateX(3px);
+
+  color: var(--gold-light);
+}
+
+.quietAction {
+  margin-top: 1.6rem;
+
+  border: 0;
+
+  background: none;
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  border-bottom: 1px solid rgba(124, 123, 112, 0.4);
+
+  padding-bottom: 0.25rem;
+}
+
+.quietAction:hover {
+  color: var(--sogan-dark);
+}
+
+/* =========================================================
+   STATES
+   ========================================================= */
+
+.error {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1rem;
+
+  color: var(--rose);
+}
+
+.stateNote {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  color: var(--muted);
+}
+
+.result {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: clamp(1rem, 4vw, 2rem) 0;
+
+  animation: resultIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes resultIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultLine {
+  display: block;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin-bottom: 2rem;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-deep),
+    transparent
+  );
+
+  transform-origin: center;
+
+  animation: drawLine 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes drawLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.resultEyebrow {
+  margin: 0 0 1.2rem;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.resultTitle {
+  margin: 0 0 1rem;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+
+  line-height: 1.2;
+
+  color: var(--sogan-dark);
+}
+
+.resultMessage {
+  margin: 0;
+
+  max-width: 24rem;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  color: var(--ink-soft);
+}
+
+.resultSignature {
+  margin: 1.8rem 0 0;
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: 1.4rem;
+
+  letter-spacing: 0.2em;
+
+  color: var(--sogan-deep);
+}
+
+/* =========================================================
+   WISHES
+   ========================================================= */
+
+.wishesScene {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(237, 228, 209, 0.55),
+    transparent
+  );
+}
+
+.wishesLayout {
+  display: grid;
+
+  gap: clamp(2.5rem, 7vh, 4rem);
+}
+
+.wishesColumn {
+  min-width: 0;
+}
+
+.wishes {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(1.8rem, 5vh, 2.6rem);
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.wish {
+  position: relative;
+
+  padding-bottom: clamp(1.4rem, 4vh, 2rem);
+
+  border-bottom: 1px solid rgba(144, 116, 60, 0.18);
+}
+
+.wish:last-child {
+  border-bottom: 0;
+}
+
+.wishMessage {
+  margin: 0 0 0.8rem;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+
+  line-height: 1.6;
+
+  color: var(--sogan-dark);
+}
+
+.wishAuthor {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: flex-end;
+
+  gap: 0.5rem;
+
+  margin: 0;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+.wishDate {
+  font-size: 0.52rem;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(124, 123, 112, 0.7);
+}
+
+/* =========================================================
+   GIFT
+   ========================================================= */
+
+.giftGrid {
+  display: grid;
+
+  gap: clamp(1.4rem, 4vw, 2rem);
+}
+
+.giftCard {
+  position: relative;
+
+  padding: clamp(1.6rem, 4.5vw, 2.4rem);
+
+  text-align: center;
+
+  background: rgba(250, 247, 240, 0.7);
+
+  border: 1px solid rgba(144, 116, 60, 0.22);
+}
+
+.giftCard::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0.45rem;
+
+  border: 1px solid rgba(144, 116, 60, 0.14);
+
+  pointer-events: none;
+}
+
+.giftBank {
+  margin: 0 0 1rem;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.giftNumber {
+  margin: 0 0 0.6rem;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+
+  letter-spacing: 0.08em;
+
+  color: var(--sogan-dark);
+}
+
+.giftName {
+  margin: 0 0 1.6rem;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: var(--ink-soft);
+}
+
+.giftStatus {
+  display: block;
+
+  min-height: 1.1rem;
+
+  margin-top: 0.9rem;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--muted);
+}
+
+.giftAddress {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin: clamp(2rem, 6vh, 3rem) auto 0;
+
+  max-width: 30rem;
+
+  text-align: center;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+
+  color: var(--ink-soft);
+}
+
+.giftAddress span {
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+/* =========================================================
+   TABLET / DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .wishesLayout {
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: start;
+
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .stationery {
+    margin-inline: 0;
+
+    width: 100%;
+  }
+
+  .rsvpScene .stationery {
+    margin-inline: auto;
+  }
+
+  .wishes {
+    max-height: 28rem;
+
+    overflow-y: auto;
+
+    padding-right: 0.8rem;
+  }
+
+  .giftGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

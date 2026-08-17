@@ -1,0 +1,729 @@
+/** @format */
+
+.hero {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--ivory);
+}
+
+.viewport {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: linear-gradient(
+    180deg,
+    #fffbee 0%,
+    #fff1cd 30%,
+    #fbdda6 62%,
+    #eec079 100%
+  );
+}
+/* ==========================================
+   SKY
+   ========================================== */
+
+.sky {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 65% 18%,
+      rgba(255, 246, 204, 0.98),
+      transparent 17rem
+    ),
+    linear-gradient(180deg, #fff7dc, #ffeec6 47%, #f6d9a4 100%);
+}
+
+.sunGlow {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 9%;
+  left: 50%;
+
+  width: min(36rem, 76vw);
+  aspect-ratio: 1;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(246, 195, 51, 0.38);
+
+  filter: blur(60px);
+}
+
+.haze {
+  position: absolute;
+
+  z-index: 8;
+
+  left: -10%;
+  right: -10%;
+  bottom: 20%;
+
+  height: 35%;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(250, 242, 219, 0.42),
+    rgba(242, 232, 200, 0.12)
+  );
+
+  filter: blur(24px);
+
+  pointer-events: none;
+}
+
+.lightWash {
+  position: absolute;
+  inset: 0;
+
+  z-index: 25;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    105deg,
+    transparent 22%,
+    rgba(255, 249, 222, 0.08) 42%,
+    rgba(255, 249, 222, 0.3) 51%,
+    transparent 63%
+  );
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+
+  z-index: 90;
+
+  opacity: 0.16;
+
+  pointer-events: none;
+
+  background-image: radial-gradient(
+    rgba(93, 58, 13, 0.18) 0.55px,
+    transparent 0.55px
+  );
+
+  background-size: 5px 5px;
+
+  mix-blend-mode: multiply;
+}
+
+/* ==========================================
+   MOUNTAINS
+   ========================================== */
+
+.distantLandscape {
+  position: absolute;
+
+  z-index: 3;
+
+  inset: auto 0 14%;
+
+  height: 50%;
+}
+
+.mountainBack {
+  position: absolute;
+
+  bottom: 0;
+  left: -8%;
+
+  width: 116%;
+  height: 80%;
+
+  background: #efc590;
+
+  opacity: 0.5;
+
+  clip-path: polygon(
+    0 70%,
+    9% 61%,
+    18% 66%,
+    27% 42%,
+    37% 61%,
+    47% 31%,
+    56% 55%,
+    66% 36%,
+    77% 61%,
+    88% 48%,
+    100% 66%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.mountainFront {
+  position: absolute;
+
+  bottom: 0;
+  left: -5%;
+
+  width: 110%;
+  height: 61%;
+
+  background: #dda65c;
+
+  opacity: 0.57;
+
+  clip-path: polygon(
+    0 72%,
+    12% 50%,
+    25% 64%,
+    37% 38%,
+    51% 69%,
+    65% 44%,
+    78% 68%,
+    90% 47%,
+    100% 63%,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* ==========================================
+   PALACE
+   ========================================== */
+
+.palace {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 50%;
+  bottom: 16%;
+
+  width: min(68rem, 105vw);
+
+  transform: translateX(-50%);
+
+  color: rgba(142, 92, 24, 0.44);
+}
+
+.palaceSvg {
+  width: 100%;
+  height: auto;
+
+  filter: drop-shadow(0 25px 45px rgba(142, 92, 24, 0.12));
+}
+
+/* ==========================================
+   MID GARDEN
+   ========================================== */
+
+.midGarden {
+  position: absolute;
+  inset: auto 0 0;
+
+  z-index: 9;
+
+  height: 34%;
+}
+
+.gardenHillOne {
+  position: absolute;
+
+  bottom: -14%;
+  left: -10%;
+
+  width: 72%;
+  height: 100%;
+
+  border-radius: 50% 50% 0 0;
+
+  background: #d99b45;
+}
+
+.gardenHillTwo {
+  position: absolute;
+
+  right: -14%;
+  bottom: -18%;
+
+  width: 75%;
+  height: 105%;
+
+  border-radius: 55% 55% 0 0;
+
+  background: #c07f2e;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+
+  z-index: 20;
+
+  display: grid;
+  place-items: center;
+
+  padding: clamp(5rem, 8vh, 8rem) var(--page-padding);
+}
+
+.heroCopy {
+  width: min(100%, 56rem);
+
+  text-align: center;
+
+  transform: translateY(-2vh);
+}
+
+.eyebrow {
+  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.56rem, 1.4vw, 0.72rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.44em;
+
+  text-transform: uppercase;
+
+  color: var(--sogan-deep);
+}
+
+.title {
+  color: var(--sogan-dark);
+}
+
+.titleMask {
+  overflow: hidden;
+
+  padding: 0.08em 0;
+}
+
+.name {
+  display: block;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(5.5rem, 17vw, 12.5rem);
+
+  font-weight: 400;
+
+  line-height: 0.67;
+
+  letter-spacing: -0.065em;
+}
+
+.ampersandRow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+
+  height: clamp(3rem, 7vw, 5rem);
+}
+
+.ampersand {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2rem, 5vw, 3.8rem);
+
+  font-style: italic;
+
+  color: var(--gold-deep);
+}
+
+.ornamentLine {
+  display: block;
+
+  width: clamp(3rem, 8vw, 7rem);
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.dateWrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  margin-top: clamp(2rem, 4vh, 3.5rem);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.55rem, 1.3vw, 0.7rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  text-transform: uppercase;
+
+  color: var(--sogan-deep);
+}
+
+.dateDot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+}
+
+/* ==========================================
+   BOTANICAL
+   ========================================== */
+
+.foreground {
+  position: absolute;
+  inset: 0;
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  color: #a86c22;
+}
+
+.foregroundShade {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -5%;
+
+  height: 22%;
+
+  background: linear-gradient(180deg, transparent, rgba(176, 110, 28, 0.5));
+}
+
+.branchLeftOuter {
+  position: absolute;
+
+  width: min(28rem, 48vw);
+
+  left: -9%;
+  bottom: -8%;
+
+  transform: rotate(-18deg);
+
+  opacity: 0.96;
+
+  filter: drop-shadow(10px 25px 25px rgba(142, 92, 24, 0.14));
+}
+
+.branchLeftInner {
+  position: absolute;
+
+  width: min(20rem, 35vw);
+
+  left: 4%;
+  bottom: -15%;
+
+  transform: rotate(4deg);
+
+  color: #c3862f;
+
+  opacity: 0.9;
+}
+
+.branchRightOuter {
+  position: absolute;
+
+  width: min(30rem, 50vw);
+
+  right: -10%;
+  bottom: -8%;
+
+  transform: scaleX(-1) rotate(-16deg);
+
+  opacity: 0.97;
+}
+
+.branchRightInner {
+  position: absolute;
+
+  width: min(21rem, 35vw);
+
+  right: 4%;
+  bottom: -16%;
+
+  transform: scaleX(-1) rotate(5deg);
+
+  color: #c3862f;
+
+  opacity: 0.9;
+}
+
+.midBotanical {
+  position: absolute;
+  inset: 0;
+
+  z-index: 12;
+
+  pointer-events: none;
+
+  color: rgba(192, 127, 46, 0.55);
+}
+
+.midBranchLeft {
+  position: absolute;
+
+  width: min(16rem, 25vw);
+
+  left: 8%;
+  bottom: 4%;
+
+  transform: rotate(-15deg);
+}
+
+.midBranchRight {
+  position: absolute;
+
+  width: min(17rem, 27vw);
+
+  right: 7%;
+  bottom: 3%;
+
+  transform: scaleX(-1) rotate(-13deg);
+}
+
+.botanicalLeft,
+.botanicalRight {
+  position: absolute;
+  inset: 0;
+
+  will-change: transform;
+}
+
+/* ==========================================
+   PETALS
+   ========================================== */
+
+.petals {
+  position: absolute;
+  inset: 0;
+
+  z-index: 26;
+
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+
+  width: 7px;
+  height: 12px;
+
+  border-radius: 80% 20% 70% 30%;
+
+  background: rgba(255, 217, 112, 0.75);
+
+  filter: blur(0.2px);
+}
+
+.petalOne {
+  left: 18%;
+  top: 19%;
+}
+
+.petalTwo {
+  left: 77%;
+  top: 32%;
+}
+
+.petalThree {
+  left: 68%;
+  top: 15%;
+}
+
+.petalFour {
+  left: 29%;
+  top: 43%;
+}
+
+.petalFive {
+  left: 84%;
+  top: 54%;
+}
+
+/* ==========================================
+   SCROLL CUE
+   ========================================== */
+
+.scrollCue {
+  position: absolute;
+
+  z-index: 50;
+
+  left: 50%;
+  bottom: clamp(1.5rem, 4vh, 3rem);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: rgba(245, 240, 228, 0.85);
+}
+
+.scrollLine {
+  position: relative;
+
+  width: 1px;
+  height: 35px;
+
+  overflow: hidden;
+
+  background: rgba(245, 240, 228, 0.25);
+}
+
+.scrollLineInner {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50%;
+
+  background: var(--ivory);
+
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(-120%);
+  }
+
+  50% {
+    transform: translateY(70%);
+  }
+
+  100% {
+    transform: translateY(220%);
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 640px) {
+  .heroCopy {
+    transform: translateY(-3vh);
+  }
+
+  .palace {
+    bottom: 18%;
+
+    width: 145vw;
+  }
+
+  .distantLandscape {
+    bottom: 16%;
+
+    height: 44%;
+  }
+
+  .midGarden {
+    height: 31%;
+  }
+
+  .branchLeftOuter {
+    left: -24%;
+
+    width: 65vw;
+  }
+
+  .branchRightOuter {
+    right: -25%;
+
+    width: 68vw;
+  }
+
+  .branchLeftInner {
+    left: -3%;
+
+    width: 43vw;
+  }
+
+  .branchRightInner {
+    right: -4%;
+
+    width: 45vw;
+  }
+
+  .midBranchLeft {
+    left: -1%;
+
+    width: 32vw;
+  }
+
+  .midBranchRight {
+    right: -2%;
+
+    width: 34vw;
+  }
+
+  .name {
+    font-size: clamp(5.4rem, 27vw, 8rem);
+  }
+
+  .dateWrapper {
+    gap: 0.65rem;
+
+    letter-spacing: 0.2em;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollLineInner {
+    animation: none;
+  }
+}

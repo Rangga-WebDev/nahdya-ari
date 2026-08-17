@@ -1,0 +1,1080 @@
+/**
+ * =========================================================
+ *    STORY CHAPTER
+ *    =========================================================
+ *
+ * @format
+ */
+
+.journey {
+  position: relative;
+
+  height: 510svh;
+
+  background: var(--paper);
+}
+
+.stage {
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.storyLayer {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.introScene {
+  z-index: 10;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(246, 195, 51, 0.28),
+      transparent 31%
+    ),
+    linear-gradient(135deg, #fff9e8, #ffeec6 50%, #f6d9a4);
+
+  color: var(--sogan-dark);
+}
+
+.introGlow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(52rem, 100vw);
+
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(246, 195, 51, 0.22);
+
+  filter: blur(100px);
+}
+
+.introContent {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(calc(100% - 3rem), 60rem);
+
+  text-align: center;
+}
+
+.introChapter {
+  position: absolute;
+
+  top: clamp(1.5rem, 5vh, 3.5rem);
+
+  left: var(--page-padding);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.32em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.introEyebrow {
+  margin: 0 0 1.7rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.introTitleMask {
+  overflow: hidden;
+}
+
+.introTitle {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(7rem, 20vw, 18rem);
+
+  font-weight: 400;
+
+  line-height: 0.57;
+
+  letter-spacing: -0.075em;
+
+  color: var(--sogan-dark);
+}
+
+.introSubtitle {
+  margin: clamp(2.5rem, 6vh, 4rem) auto 0;
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(1rem, 2vw, 1.4rem);
+
+  letter-spacing: 0.03em;
+
+  color: rgba(109, 80, 40, 0.85);
+}
+
+.introYearField {
+  position: absolute;
+
+  right: var(--page-padding);
+
+  bottom: clamp(1.5rem, 5vh, 3.5rem);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.22em;
+
+  color: rgba(142, 92, 24, 0.75);
+}
+
+.introYearField span {
+  width: 2rem;
+  height: 1px;
+
+  overflow: hidden;
+
+  text-indent: -999px;
+
+  background: var(--gold-deep);
+}
+
+/* =========================================================
+   CHAPTER SCENE
+   ========================================================= */
+
+.chapterScene {
+  z-index: 20;
+}
+
+.toneIvory {
+  background: linear-gradient(135deg, #fffdf7, #ffeed0);
+
+  color: var(--sogan-dark);
+}
+
+.toneGarden {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(246, 195, 51, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #fff4d6, #f7d9a0);
+
+  color: var(--sogan-dark);
+}
+
+.toneGolden {
+  background:
+    radial-gradient(
+      circle at 46% 35%,
+      rgba(255, 249, 224, 0.6),
+      transparent 33%
+    ),
+    linear-gradient(135deg, #ffe6a8, #f6c976 55%, #e9a94a);
+
+  color: var(--sogan-dark);
+}
+
+.chapterGlow {
+  position: absolute;
+
+  top: 15%;
+  left: 25%;
+
+  width: min(42rem, 80vw);
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background: rgba(246, 195, 51, 0.2);
+
+  filter: blur(90px);
+}
+
+/* =========================================================
+   GIANT YEAR
+   ========================================================= */
+
+.giantStoryYear {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(16rem, 43vw, 40rem);
+
+  line-height: 0.68;
+
+  letter-spacing: -0.07em;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  white-space: nowrap;
+}
+
+.toneIvory .giantStoryYear {
+  color: rgba(142, 92, 24, 0.07);
+}
+
+.toneGarden .giantStoryYear {
+  color: rgba(142, 92, 24, 0.08);
+}
+
+.toneGolden .giantStoryYear {
+  color: rgba(93, 58, 13, 0.09);
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.storyGrid {
+  position: relative;
+
+  z-index: 10;
+
+  display: grid;
+
+  width: min(calc(100% - var(--page-padding) * 2), 88rem);
+
+  height: 100%;
+
+  margin-inline: auto;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
+
+  align-items: center;
+
+  gap: clamp(4rem, 9vw, 10rem);
+
+  padding-block: clamp(5rem, 8vh, 7rem);
+}
+
+.alignRight {
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+}
+
+.alignRight .imageColumn {
+  grid-column: 2;
+}
+
+.alignRight .storyContent {
+  grid-column: 1;
+  grid-row: 1;
+
+  justify-self: end;
+}
+
+.imageColumn {
+  width: min(100%, 38rem);
+
+  justify-self: center;
+
+  will-change: transform;
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.imageFrame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.78;
+
+  padding: 0.55rem;
+
+  border: 1px solid currentColor;
+
+  border-color: rgba(143, 99, 20, 0.34);
+
+  box-shadow: 0 45px 120px rgba(142, 92, 24, 0.18);
+}
+
+.alignLeft .imageFrame {
+  border-radius: 16rem 1rem 1rem 1rem;
+}
+
+.alignRight .imageFrame {
+  border-radius: 1rem 16rem 1rem 1rem;
+}
+
+.imageInner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+}
+
+.storyImage {
+  object-fit: cover;
+
+  filter: saturate(0.82) contrast(0.96);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(180deg, transparent 48%, rgba(142, 92, 24, 0.18));
+}
+
+.imageGrain {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.13;
+
+  background-image: radial-gradient(
+    rgba(93, 58, 13, 0.22) 0.5px,
+    transparent 0.5px
+  );
+
+  background-size: 5px 5px;
+
+  mix-blend-mode: multiply;
+
+  pointer-events: none;
+}
+
+.imageFallback {
+  position: relative;
+
+  display: grid;
+
+  width: 100%;
+  height: 100%;
+
+  place-items: center;
+
+  overflow: hidden;
+}
+
+.fallbackIvory {
+  background: linear-gradient(145deg, #fff1cf, #e9bd7f);
+}
+
+.fallbackGarden {
+  background: linear-gradient(145deg, #f6d9a4, #c07f2e);
+}
+
+.fallbackGolden {
+  background: linear-gradient(145deg, #ffd970, #dfa72c);
+}
+
+.fallbackYear {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(7rem, 15vw, 13rem);
+
+  line-height: 1;
+
+  color: rgba(93, 58, 13, 0.35);
+}
+
+.fallbackNumber {
+  position: absolute;
+
+  left: 1.5rem;
+  bottom: 1.4rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.25em;
+
+  color: rgba(93, 58, 13, 0.7);
+}
+
+.imageIndex {
+  position: absolute;
+
+  right: -2.5rem;
+  bottom: 0;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.2em;
+
+  color: var(--gold-deep);
+}
+
+/* =========================================================
+   STORY COPY
+   ========================================================= */
+
+.storyContent {
+  width: 100%;
+  max-width: 34rem;
+
+  will-change: transform;
+}
+
+.chapterNumber {
+  display: block;
+
+  margin-bottom: 2rem;
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(1.8rem, 4vw, 3rem);
+
+  color: var(--gold-deep);
+}
+
+.chapterEyebrow {
+  margin: 0 0 1rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.38em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.chapterTitleMask {
+  overflow: hidden;
+
+  padding: 0.08em 0;
+}
+
+.chapterTitle {
+  max-width: 8ch;
+
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(5rem, 10vw, 9rem);
+
+  font-weight: 400;
+
+  line-height: 0.76;
+
+  letter-spacing: -0.06em;
+}
+
+.storyRule {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  width: min(13rem, 50%);
+
+  margin: clamp(1.7rem, 4vh, 2.7rem) 0;
+}
+
+.storyRule span {
+  flex: 1;
+
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.35;
+}
+
+.storyRule i {
+  width: 5px;
+  height: 5px;
+
+  transform: rotate(45deg);
+
+  border: 1px solid var(--gold-deep);
+}
+
+.storyBody {
+  max-width: 31rem;
+
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+
+  line-height: 1.5;
+
+  opacity: 0.8;
+}
+
+.storyMeta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin-top: 2rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  opacity: 0.58;
+}
+
+.storyMeta i {
+  width: 22px;
+  height: 1px;
+
+  background: currentColor;
+}
+
+.edgeYear {
+  position: absolute;
+
+  z-index: 20;
+
+  right: var(--page-padding);
+
+  top: 50%;
+
+  transform: translateY(-50%) rotate(90deg);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.35em;
+
+  opacity: 0.46;
+}
+
+/* =========================================================
+   FINALE
+   ========================================================= */
+
+.finaleScene {
+  z-index: 40;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 43%,
+      rgba(255, 250, 226, 0.9),
+      transparent 30%
+    ),
+    linear-gradient(145deg, #fff9e8, #ffe6a8 55%, #f3ce93);
+
+  color: var(--sogan-dark);
+}
+
+.finaleSun {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(46rem, 90vw);
+
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(246, 195, 51, 0.18);
+
+  filter: blur(90px);
+}
+
+.finaleRing {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(39rem, 76vw);
+
+  aspect-ratio: 1.13;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(143, 99, 20, 0.34);
+
+  border-radius: 50%;
+}
+
+.finaleContent {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(calc(100% - 3rem), 58rem);
+
+  text-align: center;
+}
+
+.finaleEyebrow {
+  margin: 0 0 1.6rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.finaleTitleMask {
+  overflow: hidden;
+}
+
+.finaleTitle {
+  max-width: 12ch;
+
+  margin: 0 auto;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  font-weight: 400;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.055em;
+}
+
+.finaleRule {
+  display: flex;
+
+  width: min(16rem, 55vw);
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin: clamp(2rem, 5vh, 3.2rem) auto;
+}
+
+.finaleRule span {
+  flex: 1;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-deep),
+    transparent
+  );
+}
+
+.finaleRule i {
+  width: 5px;
+  height: 5px;
+
+  transform: rotate(45deg);
+
+  border: 1px solid var(--gold-deep);
+}
+
+.finaleMessage {
+  max-width: 31rem;
+
+  margin: 0 auto;
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(1rem, 2vw, 1.35rem);
+
+  line-height: 1.5;
+
+  color: rgba(109, 80, 40, 0.85);
+}
+
+.finaleMonogram {
+  position: absolute;
+
+  z-index: 10;
+
+  top: clamp(1.5rem, 4vh, 3rem);
+
+  left: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.2rem;
+
+  color: var(--gold-deep);
+}
+
+.finaleMonogram i {
+  font-weight: 400;
+
+  font-style: italic;
+}
+
+.finaleYear {
+  position: absolute;
+
+  bottom: clamp(1.5rem, 4vh, 3rem);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.3em;
+
+  color: rgba(142, 92, 24, 0.65);
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.storyProgress {
+  position: absolute;
+
+  z-index: 90;
+
+  left: clamp(0.7rem, 2vw, 2rem);
+
+  top: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  transform: translateY(-50%);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.44rem;
+
+  color: rgba(143, 99, 20, 0.8);
+}
+
+.storyProgressTrack {
+  position: relative;
+
+  width: 1px;
+  height: 76px;
+
+  overflow: hidden;
+
+  background: rgba(143, 99, 20, 0.22);
+}
+
+.storyProgressTrack span {
+  position: absolute;
+  inset: 0;
+
+  background: var(--gold-deep);
+}
+
+/* =========================================================
+   CENTRAL TIMELINE RAIL
+   ========================================================= */
+
+.timelineRail {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 7%;
+  bottom: 7%;
+
+  left: 50%;
+
+  width: 1px;
+
+  overflow: hidden;
+
+  transform: translateX(-50%);
+
+  background: rgba(143, 99, 20, 0.14);
+
+  pointer-events: none;
+}
+
+.timelineRailFill {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(var(--gold-deep), rgba(143, 99, 20, 0.2));
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .journey {
+    height: 480svh;
+  }
+
+  .storyGrid,
+  .alignRight {
+    width: min(calc(100% - 2.6rem), 36rem);
+
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+    align-content: center;
+
+    padding: 4.8rem 0 3rem;
+  }
+
+  .alignRight .imageColumn {
+    grid-column: 1;
+  }
+
+  .alignRight .storyContent {
+    grid-column: 1;
+    grid-row: auto;
+
+    justify-self: auto;
+  }
+
+  .imageColumn {
+    width: min(70vw, 18rem);
+
+    justify-self: center;
+  }
+
+  .imageFrame,
+  .alignLeft .imageFrame,
+  .alignRight .imageFrame {
+    border-radius: 8rem 8rem 1.2rem 1.2rem;
+  }
+
+  .imageIndex {
+    display: none;
+  }
+
+  .storyContent {
+    max-width: none;
+
+    text-align: center;
+  }
+
+  .chapterNumber {
+    margin-bottom: 0.7rem;
+
+    font-size: 1.4rem;
+  }
+
+  .chapterEyebrow {
+    margin-bottom: 0.6rem;
+
+    font-size: 0.48rem;
+  }
+
+  .chapterTitle {
+    max-width: 9ch;
+
+    margin-inline: auto;
+
+    font-size: clamp(4.5rem, 19vw, 6rem);
+  }
+
+  .storyRule {
+    margin: 1rem auto;
+
+    width: 9rem;
+  }
+
+  .storyBody {
+    max-width: 27rem;
+
+    margin-inline: auto;
+
+    font-size: 1.05rem;
+
+    line-height: 1.42;
+  }
+
+  .storyMeta {
+    justify-content: center;
+
+    margin-top: 1rem;
+  }
+
+  .giantStoryYear {
+    font-size: 84vw;
+  }
+
+  .edgeYear {
+    display: none;
+  }
+
+  .timelineRail {
+    left: 1rem;
+
+    opacity: 0.55;
+  }
+
+  .storyProgress {
+    display: none;
+  }
+
+  .introTitle {
+    font-size: clamp(7rem, 32vw, 10rem);
+  }
+
+  .introYearField {
+    right: 1.25rem;
+  }
+
+  .introChapter {
+    left: 1.25rem;
+  }
+
+  .finaleRing {
+    width: 85vw;
+  }
+
+  .finaleTitle {
+    max-width: 10ch;
+
+    font-size: clamp(3.8rem, 16vw, 5.5rem);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .journey {
+    height: auto;
+  }
+
+  .stage {
+    position: relative;
+
+    height: auto;
+
+    overflow: visible;
+  }
+
+  .storyLayer {
+    position: relative;
+
+    min-height: 100svh;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+  }
+
+  .storyGrid {
+    min-height: 100svh;
+  }
+
+  .timelineRail,
+  .storyProgress {
+    display: none;
+  }
+}

@@ -1,0 +1,763 @@
+/** @format */
+
+.eventChapter {
+  position: relative;
+
+  height: 355svh;
+
+  background: var(--paper);
+}
+
+.stage {
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.ceremonyLayer,
+.receptionLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.receptionLayer {
+  z-index: 10;
+}
+
+/* =========================================
+   SCENES
+   ========================================= */
+
+.eventScene {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+}
+
+.ceremonyScene {
+  background:
+    radial-gradient(
+      circle at 50% 24%,
+      rgba(255, 250, 226, 0.85),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #fff9e8 0%, #ffeec6 52%, #f3ce93 100%);
+
+  color: var(--sogan-dark);
+}
+
+.receptionScene {
+  background:
+    radial-gradient(
+      circle at 50% 22%,
+      rgba(255, 244, 205, 0.9),
+      transparent 28%
+    ),
+    linear-gradient(180deg, #fff4d6 0%, #fbdda6 50%, #eec079 100%);
+
+  color: var(--sogan-dark);
+}
+
+.sceneAtmosphere {
+  position: absolute;
+
+  top: 12%;
+  left: 50%;
+
+  width: min(48rem, 100vw);
+
+  aspect-ratio: 1;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(246, 195, 51, 0.3);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   GIANT DATE
+   ========================================= */
+
+.giantDate {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 47%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(23rem, 60vw, 56rem);
+
+  line-height: 0.65;
+
+  letter-spacing: -0.08em;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+.ceremonyScene .giantDate {
+  color: rgba(142, 92, 24, 0.075);
+}
+
+.receptionScene .giantDate {
+  color: rgba(93, 58, 13, 0.07);
+}
+
+.eventDateHeader {
+  position: absolute;
+
+  z-index: 25;
+
+  top: clamp(1.5rem, 5vh, 3.5rem);
+
+  left: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  transform: translateX(-50%);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.34em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.eventDateHeader i {
+  width: 26px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.34;
+}
+
+/* =========================================
+   PAVILION
+   ========================================= */
+
+.pavilion {
+  position: relative;
+
+  z-index: 15;
+
+  display: grid;
+
+  width: min(38rem, 75vw);
+
+  min-height: min(72vh, 47rem);
+
+  place-items: center;
+
+  padding: clamp(4rem, 9vh, 6rem) clamp(2rem, 5vw, 4rem);
+
+  will-change: transform, opacity;
+}
+
+.pavilionOuter,
+.pavilionInner {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50% 50% 2rem 2rem / 24% 24% 2rem 2rem;
+}
+
+.pavilionOuter {
+  inset: 0;
+
+  border: 1px solid currentColor;
+
+  opacity: 0.42;
+}
+
+.pavilionInner {
+  inset: 13px;
+
+  border: 1px solid currentColor;
+
+  opacity: 0.15;
+}
+
+.ceremonyScene .pavilion {
+  background: rgba(255, 253, 247, 0.42);
+
+  box-shadow: 0 50px 120px rgba(142, 92, 24, 0.16);
+}
+
+.receptionScene .pavilion {
+  background: rgba(255, 253, 247, 0.34);
+
+  box-shadow: 0 50px 140px rgba(142, 92, 24, 0.2);
+}
+
+.pavilionOrnament {
+  position: absolute;
+
+  top: 3rem;
+  left: 50%;
+
+  width: 8rem;
+
+  transform: translateX(-50%);
+
+  color: var(--gold);
+}
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.eventContent {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.eventEyebrow {
+  margin: 0 0 1.4rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.38em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.eventTitleMask {
+  overflow: hidden;
+
+  padding: 0.1em 0;
+}
+
+.eventTitle {
+  max-width: 9ch;
+
+  margin: 0 auto;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(4.6rem, 10vw, 8.5rem);
+
+  font-weight: 400;
+
+  line-height: 0.74;
+
+  letter-spacing: -0.055em;
+
+  text-wrap: balance;
+}
+
+.eventTime {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(1rem, 3vw, 2rem);
+
+  margin: clamp(2rem, 5vh, 3.5rem) 0 0;
+
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(1.6rem, 4vw, 2.7rem);
+}
+
+.eventTime i {
+  width: clamp(2rem, 5vw, 4rem);
+
+  height: 1px;
+
+  background: var(--gold);
+
+  opacity: 0.55;
+}
+
+.eventVenue {
+  margin-top: clamp(1.5rem, 3vh, 2rem);
+}
+
+.eventVenue span {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.eventVenue p {
+  max-width: 24rem;
+
+  margin: 0.45rem auto 0;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.62rem, 1.3vw, 0.75rem);
+
+  line-height: 1.7;
+
+  letter-spacing: 0.06em;
+
+  opacity: 0.6;
+}
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.eventActions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  margin-top: clamp(1.8rem, 4vh, 2.7rem);
+}
+
+.eventAction {
+  display: inline-flex;
+
+  min-width: 9rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 0.8rem 0.95rem;
+
+  border: 1px solid currentColor;
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 300ms ease,
+    background 300ms ease,
+    color 300ms ease;
+}
+
+.eventAction:hover {
+  transform: translateY(-3px);
+}
+
+.ceremonyScene .eventAction:hover {
+  background: var(--sogan-dark);
+
+  color: var(--ivory);
+}
+
+.receptionScene .eventAction:hover {
+  background: var(--sogan-dark);
+
+  color: var(--ivory);
+}
+
+.actionIcon {
+  display: grid;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(223, 167, 44, 0.22);
+
+  color: var(--gold-deep);
+}
+
+.eventActionDisabled {
+  cursor: not-allowed;
+
+  opacity: 0.4;
+}
+
+/* =========================================
+   BOTANICAL
+   ========================================= */
+
+.botanicalLeft,
+.botanicalRight {
+  position: absolute;
+
+  z-index: 8;
+
+  bottom: -8%;
+
+  width: min(22rem, 30vw);
+
+  pointer-events: none;
+}
+
+.botanicalLeft {
+  left: -3%;
+}
+
+.botanicalRight {
+  right: -3%;
+
+  transform: scaleX(-1);
+}
+
+.ceremonyScene .botanicalLeft,
+.ceremonyScene .botanicalRight {
+  color: rgba(192, 127, 46, 0.36);
+}
+
+.receptionScene .botanicalLeft,
+.receptionScene .botanicalRight {
+  color: rgba(176, 110, 28, 0.32);
+}
+
+/* =========================================
+   INDEX
+   ========================================= */
+
+.eventSceneIndex {
+  position: absolute;
+
+  z-index: 20;
+
+  right: var(--page-padding);
+
+  top: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  transform: translateY(-50%) rotate(90deg);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  opacity: 0.5;
+}
+
+.eventSceneIndex i {
+  width: 2rem;
+  height: 1px;
+
+  background: currentColor;
+}
+
+/* =========================================
+   TRANSITION
+   ========================================= */
+
+.transitionCurtain {
+  position: absolute;
+
+  z-index: 50;
+
+  inset: 0;
+
+  background: linear-gradient(180deg, #fff6dd, #fbdda6, #f0c789);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+.countdownWrapper {
+  position: absolute;
+
+  z-index: 70;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(calc(100% - 3rem), 50rem);
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  color: var(--sogan-dark);
+}
+
+.countdownEyebrow {
+  display: block;
+
+  margin-bottom: clamp(1.8rem, 5vh, 3rem);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.38em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.countdown {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: center;
+
+  gap: clamp(0.4rem, 2vw, 1.5rem);
+}
+
+.countdownItem {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.countdownNumber {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(3.8rem, 10vw, 8rem);
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+}
+
+.countdownLabel {
+  margin-top: 1rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.48rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  text-transform: uppercase;
+
+  color: rgba(93, 58, 13, 0.66);
+}
+
+.countdownSeparator {
+  transform: translateY(-0.75rem);
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+
+  color: var(--gold-deep);
+}
+
+.countdownComplete {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
+
+  font-style: italic;
+
+  color: var(--sogan-dark);
+}
+
+/* =========================================
+   PROGRESS
+   ========================================= */
+
+.eventProgress {
+  position: absolute;
+
+  z-index: 90;
+
+  left: clamp(0.7rem, 2vw, 2rem);
+
+  top: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.7rem;
+
+  transform: translateY(-50%);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.44rem;
+
+  color: rgba(143, 99, 20, 0.8);
+}
+
+.eventProgressTrack {
+  position: relative;
+
+  width: 1px;
+  height: 78px;
+
+  overflow: hidden;
+
+  background: rgba(143, 99, 20, 0.24);
+}
+
+.eventProgressTrack span {
+  position: absolute;
+  inset: 0;
+
+  background: var(--gold-deep);
+
+  transform-origin: top;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .eventChapter {
+    height: 330svh;
+  }
+
+  .pavilion {
+    width: 85vw;
+
+    min-height: 69svh;
+
+    padding: 4.5rem 1.5rem 3rem;
+  }
+
+  .pavilionOrnament {
+    top: 2.6rem;
+
+    width: 6.5rem;
+  }
+
+  .eventTitle {
+    font-size: clamp(4.5rem, 20vw, 6rem);
+  }
+
+  .eventActions {
+    flex-direction: column;
+
+    width: min(100%, 15rem);
+
+    margin-inline: auto;
+  }
+
+  .eventAction {
+    width: 100%;
+  }
+
+  .botanicalLeft,
+  .botanicalRight {
+    width: 42vw;
+
+    bottom: -3%;
+  }
+
+  .botanicalLeft {
+    left: -12%;
+  }
+
+  .botanicalRight {
+    right: -12%;
+  }
+
+  .giantDate {
+    font-size: 100vw;
+  }
+
+  .eventSceneIndex {
+    display: none;
+  }
+
+  .eventProgress {
+    left: 0.55rem;
+
+    opacity: 0.6;
+  }
+
+  .countdown {
+    gap: 0.25rem;
+  }
+
+  .countdownNumber {
+    font-size: clamp(3.1rem, 15vw, 4.7rem);
+  }
+
+  .countdownLabel {
+    margin-top: 0.7rem;
+
+    font-size: 0.4rem;
+
+    letter-spacing: 0.17em;
+  }
+
+  .countdownSeparator {
+    font-size: 1.8rem;
+  }
+}

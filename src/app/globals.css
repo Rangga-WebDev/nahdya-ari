@@ -1,26 +1,241 @@
+/** @format */
+
 @import "tailwindcss";
 
+/* =========================================================
+   WEDDING DESIGN TOKENS
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background — kuning gadhing */
+  --ivory: #fff8e9;
+  --paper: #fdeecf;
+  --paper-light: #fffdf7;
+
+  /* Sogan — batik earth tones */
+  --sogan: #c07f2e;
+  --sogan-soft: #e9bd7f;
+  --sogan-deep: #8e5c18;
+  --sogan-dark: #5d3a0d;
+
+  /* Prada — gold leaf */
+  --gold: #dfa72c;
+  --gold-light: #f8e0a5;
+  --gold-deep: #8f6314;
+
+  /* Supporting */
+  --turmeric: #f6c333;
+  --terracotta: #d2552f;
+  --butter: #ffd970;
+  --rose: #e0836a;
+
+  /* Typography */
+  --ink: #4a2d0e;
+  --ink-soft: #6d5028;
+  --muted: #7d6440;
+
+  /* Lines */
+  --line: rgba(93, 58, 13, 0.16);
+  --line-light: rgba(255, 248, 233, 0.24);
+
+  /* Layout */
+  --page-padding: clamp(1.25rem, 4vw, 4rem);
+  --content-width: 90rem;
+
+  /* Radius */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2.5rem;
+  --radius-pill: 999px;
+
+  /* Layers */
+  --z-background: 0;
+  --z-scene: 10;
+  --z-content: 20;
+  --z-foreground: 30;
+  --z-overlay: 40;
+  --z-navigation: 50;
+  --z-modal: 100;
 }
+
+/* =========================================================
+   TAILWIND THEME
+   ========================================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-paper-light: var(--paper-light);
+
+  --color-sogan: var(--sogan);
+  --color-sogan-soft: var(--sogan-soft);
+  --color-sogan-deep: var(--sogan-deep);
+  --color-sogan-dark: var(--sogan-dark);
+
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
+
+  --color-turmeric: var(--turmeric);
+  --color-terracotta: var(--terracotta);
+  --color-butter: var(--butter);
+  --color-rose: var(--rose);
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+
+  --font-display: var(--font-italiana);
+  --font-serif: var(--font-cormorant);
+  --font-body: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ivory);
+  color: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(246, 195, 51, 0.22),
+      transparent 35rem
+    ),
+    var(--ivory);
+
+  color: var(--ink);
+
+  font-family: var(--font-manrope), sans-serif;
+
+  overflow-x: clip;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.font-display {
+  font-family: var(--font-italiana), serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), serif;
+}
+
+.font-body {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.text-editorial-display {
+  font-family: var(--font-italiana), serif;
+
+  font-size: clamp(4rem, 11vw, 10rem);
+
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+.text-wedding-display {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(4.5rem, 13vw, 12rem);
+
+  font-weight: 400;
+
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+}
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+.page-container {
+  width: min(calc(100% - (var(--page-padding) * 2)), var(--content-width));
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--sogan-deep);
+  color: var(--ivory);
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sogan);
+  border-radius: 999px;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
