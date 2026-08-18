@@ -12,7 +12,7 @@ import { useLenis } from "lenis/react";
 
 import type { GalleryItem } from "@/types/invitation";
 
-import styles from "./GalleryJourney.module.css";
+import styles from "./GallerySection.module.css";
 
 type GalleryLightboxProps = {
   items: GalleryItem[];

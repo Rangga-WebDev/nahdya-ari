@@ -2,7 +2,7 @@
 
 import type { Wish } from "@/types/invitation";
 
-import styles from "./InteractionJourney.module.css";
+import styles from "./InteractionSection.module.css";
 
 type WishesListProps = {
   wishes: Wish[];

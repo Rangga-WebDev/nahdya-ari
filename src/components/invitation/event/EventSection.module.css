@@ -1,0 +1,256 @@
+/** @format */
+
+.events {
+  position: relative;
+
+  padding: var(--section-y) var(--page-padding);
+
+  overflow: clip;
+
+  isolation: isolate;
+
+  background: transparent;
+}
+
+.toile {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.4;
+
+  color: var(--sage);
+
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+}
+
+.list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(2.5rem, 8vh, 4rem);
+
+  margin-top: clamp(2.5rem, 8vh, 4rem);
+}
+
+/* =========================================================
+   ARCH PANEL — the invitation plate
+   ========================================================= */
+
+.panel {
+  position: relative;
+
+  width: min(100%, 24rem);
+
+  margin-inline: auto;
+
+  padding: clamp(2.6rem, 9vw, 3.6rem) clamp(1.5rem, 6vw, 2.4rem)
+    clamp(2rem, 7vw, 3rem);
+
+  border-radius: 50% 50% 8px 8px / 22% 22% 8px 8px;
+
+  background: linear-gradient(
+    180deg,
+    var(--canvas-warm) 0%,
+    var(--canvas-soft) 100%
+  );
+
+  box-shadow: 0 40px 80px -60px rgba(20, 18, 15, 0.5);
+
+  text-align: center;
+}
+
+.panelBorder {
+  position: absolute;
+
+  inset: 0.6rem;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50% 50% 5px 5px / 21% 21% 5px 5px;
+
+  opacity: 0.6;
+
+  pointer-events: none;
+}
+
+.crest {
+  width: clamp(2.2rem, 9vw, 3rem);
+
+  margin: 0 auto clamp(0.8rem, 2.5vh, 1.2rem);
+
+  color: var(--gold);
+}
+
+.eyebrow {
+  margin: 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.58rem, 2.3vw, 0.66rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.34em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.title {
+  margin: 0.5rem 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.9rem, 8vw, 2.6rem);
+
+  font-weight: 400;
+
+  color: var(--slate-deep);
+}
+
+.day {
+  margin: clamp(1rem, 3vh, 1.5rem) 0 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.66rem, 2.6vw, 0.74rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: var(--slate-deep);
+}
+
+.time {
+  margin: 0.45rem 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.15rem, 4.5vw, 1.45rem);
+
+  color: var(--ink-soft);
+}
+
+.rule {
+  display: block;
+
+  width: 3.5rem;
+
+  height: 1px;
+
+  margin: clamp(1.1rem, 3.5vh, 1.6rem) auto;
+
+  background: var(--gold);
+
+  opacity: 0.55;
+}
+
+.venue {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.15rem, 4.5vw, 1.4rem);
+
+  color: var(--slate-deep);
+}
+
+.address {
+  max-width: 20rem;
+
+  margin: 0.5rem auto 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.68rem, 2.7vw, 0.76rem);
+
+  line-height: 1.7;
+
+  color: var(--muted);
+}
+
+.action {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  min-height: 2.8rem;
+
+  margin-top: clamp(1.3rem, 4vh, 1.9rem);
+
+  padding: 0.75rem 1.5rem;
+
+  border-radius: var(--radius-pill);
+
+  background: var(--slate-deep);
+
+  color: var(--ivory);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.58rem, 2.3vw, 0.66rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 400ms var(--ease-editorial),
+    transform 400ms var(--ease-editorial);
+}
+
+.action:hover {
+  background: var(--slate-dark);
+
+  transform: translateY(-2px);
+}
+
+.action:focus-visible {
+  outline: 1px solid var(--gold);
+
+  outline-offset: 4px;
+}
+
+.actionIcon {
+  width: 0.9rem;
+
+  height: 0.9rem;
+}
+
+@media (min-width: 900px) {
+  .list {
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .panel {
+    width: min(100%, 25rem);
+
+    margin-inline: 0;
+  }
+}

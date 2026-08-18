@@ -219,7 +219,7 @@ export const invitation: InvitationData = {
   gallery: {
     eyebrow: "Serpihan Kenangan",
 
-    title: "Kenangan",
+    title: "Gallery",
 
     subtitle:
       "Kumpulan momen sederhana, tawa, perjalanan, dan segala hal di antaranya.",
@@ -387,5 +387,43 @@ export const invitation: InvitationData = {
     signature: "Nahdya & Ari",
 
     portrait: "/art/closing/couple.webp",
+  },
+
+  breaks: [
+    {
+      id: "break-journey",
+
+      eyebrow: "Dua Warisan, Satu Perjalanan",
+
+      lines: ["Dua jiwa.", "Satu perjalanan.", "Seumur hidup di depan."],
+
+      image: "/art/gallery/memory-05.webp",
+
+      objectPosition: "50% 35%",
+    },
+
+    {
+      id: "break-vow",
+
+      eyebrow: "Menuju Hari Itu",
+
+      lines: ["Dari dua tanah,", "menuju satu rumah."],
+
+      image: "/art/gallery/memory-03.webp",
+
+      objectPosition: "50% 45%",
+    },
+  ],
+
+  quote: {
+    eyebrow: "Sebuah Doa",
+
+    text: "Dari apa pun jiwa kami diciptakan, jiwanya dan jiwaku adalah sama.",
+
+    author: "Nahdya & Ari",
+
+    image: "/art/gallery/memory-06.webp",
+
+    objectPosition: "50% 40%",
   },
 };

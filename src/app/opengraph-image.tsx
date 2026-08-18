@@ -71,8 +71,8 @@ export default async function OpengraphImage() {
         alignItems: "center",
         justifyContent: "center",
         background:
-          "linear-gradient(160deg, #fffdf7 0%, #fff4d6 45%, #f3ce93 100%)",
-        color: "#5d3a0d",
+          "linear-gradient(160deg, #f8f4ec 0%, #e8ded0 45%, #c4ad8d 100%)",
+        color: "#292321",
       }}
     >
       <div
@@ -82,7 +82,7 @@ export default async function OpengraphImage() {
           left: 34,
           right: 34,
           bottom: 34,
-          border: "1px solid rgba(143, 99, 20, 0.38)",
+          border: "1px solid rgba(157, 128, 88, 0.45)",
         }}
       />
 
@@ -90,7 +90,7 @@ export default async function OpengraphImage() {
         style={{
           fontSize: 24,
           letterSpacing: 14,
-          color: "#8f6314",
+          color: "#6f5936",
         }}
       >
         {eyebrow}
@@ -102,7 +102,7 @@ export default async function OpengraphImage() {
           fontSize: 132,
           fontFamily: display,
           letterSpacing: -2,
-          color: "#5d3a0d",
+          color: "#292321",
         }}
       >
         {coupleTitle}
@@ -115,20 +115,20 @@ export default async function OpengraphImage() {
           marginTop: 34,
         }}
       >
-        <div style={{ width: 120, height: 1, background: "#8f6314" }} />
+        <div style={{ width: 120, height: 1, background: "#9d8058" }} />
 
         <div
           style={{
             margin: "0 22px",
             fontSize: 30,
             letterSpacing: 8,
-            color: "#8f6314",
+            color: "#6f5936",
           }}
         >
           {date}
         </div>
 
-        <div style={{ width: 120, height: 1, background: "#8f6314" }} />
+        <div style={{ width: 120, height: 1, background: "#9d8058" }} />
       </div>
 
       <div
@@ -136,7 +136,7 @@ export default async function OpengraphImage() {
           marginTop: 30,
           fontSize: 22,
           letterSpacing: 6,
-          color: "#7d6440",
+          color: "#6b5648",
         }}
       >
         {venue.toUpperCase()}

@@ -7,40 +7,107 @@
    ========================================================= */
 
 :root {
-  /* Background — kuning gadhing */
-  --ivory: #fff8e9;
-  --paper: #fdeecf;
-  --paper-light: #fffdf7;
+  /* ---- DARK ZONE: cover, hero, verse, couple ------------------------------
+     Four near-blacks with a faint warm cast. Never a flat #000 — the small
+     steps between them are what give the opening its atmosphere. */
+  --ink-900: #080808;
+  --ink-850: #0b0b0b;
+  --ink-800: #101010;
+  --ink-700: #161616;
+  --ink-600: #1f1e1c;
+  --ink-500: #2b2926;
 
-  /* Sogan — batik earth tones */
-  --sogan: #c07f2e;
-  --sogan-soft: #e9bd7f;
-  --sogan-deep: #8e5c18;
-  --sogan-dark: #5d3a0d;
+  /* ---- LIGHT ZONE: save the date onward ---------------------------------- */
+  --canvas: #f7f4ee;
+  --canvas-soft: #f2eee5;
+  --canvas-warm: #faf8f4;
+  --canvas-deep: #e8e2d6;
 
-  /* Prada — gold leaf */
-  --gold: #dfa72c;
-  --gold-light: #f8e0a5;
-  --gold-deep: #8f6314;
+  /* Mid tones used only by the long dark→light wash. */
+  --wash-1: #272522;
+  --wash-2: #4a4640;
+  --wash-3: #918a7e;
+  --wash-4: #bdb5aa;
 
-  /* Supporting */
-  --turmeric: #f6c333;
-  --terracotta: #d2552f;
-  --butter: #ffd970;
-  --rose: #e0836a;
+  /* Legacy surface names still referenced by older modules. */
+  --ivory: #f7f4ee;
+  --paper: #e8e2d6;
+  --paper-light: #faf8f4;
+  --beige: #d9d0c0;
+  --onyx: #080808;
+  --obsidian: #0b0b0b;
+  --graphite: #101010;
+  --smoke: #161616;
+  --ash: #2b2926;
+  --slate: #101010;
+  --slate-soft: #2b2926;
+  --slate-deep: #0b0b0b;
+  --slate-dark: #080808;
+  --charcoal: #080808;
+
+  /* Antique gold — accent only */
+  --gold: #c2a05f;
+  --gold-light: #ecd7a4;
+  --gold-deep: #7d6132;
+
+  /* Muted sage */
+  --sage: #7d8880;
+  --sage-deep: #5c6862;
+
+  /* Botanical ornament — watercolour tones that read on cream and on black. */
+  --bot-sage: #8f9a8c;
+  --bot-olive: #7f8560;
+  --bot-blush: #cbb79c;
+  --bot-cream: #e3d8c4;
+  --bot-gold: #c2a05f;
+  --bot-stem: #6f7a68;
+  --bot-ink: #3b4238;
+
+  /* Legacy aliases kept so existing modules resolve to the new palette. */
+  --sogan: #2b2926;
+  --sogan-soft: #7d8880;
+  --sogan-deep: #101010;
+  --sogan-dark: #080808;
+  --burgundy: #101010;
+  --maroon: #2b2926;
+  --champagne: #ecd7a4;
+  --taupe: #7d8880;
+  --turmeric: #ecd7a4;
+  --terracotta: #c2a05f;
+  --butter: #d9d0c0;
+  --rose: #c2a05f;
 
   /* Typography */
-  --ink: #4a2d0e;
-  --ink-soft: #6d5028;
-  --muted: #7d6440;
+  --ink: #14120f;
+  --ink-soft: #322f2a;
+  --muted: #56514a;
+  --on-dark: #efe9df;
+  --on-dark-soft: rgba(239, 233, 223, 0.68);
+  --on-dark-faint: rgba(239, 233, 223, 0.42);
 
   /* Lines */
-  --line: rgba(93, 58, 13, 0.16);
-  --line-light: rgba(255, 248, 233, 0.24);
+  --line: rgba(20, 18, 15, 0.14);
+  --line-light: rgba(239, 233, 223, 0.22);
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-veil: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-reveal: 0.9s;
+  --duration-veil: 1.2s;
+
+  /* Section rhythm — generous, so sections breathe instead of stacking. */
+  --section-y: clamp(4.5rem, 14vh, 12.5rem);
+  --section-y-lg: clamp(6rem, 20vh, 16rem);
 
   /* Layout */
   --page-padding: clamp(1.25rem, 4vw, 4rem);
   --content-width: 90rem;
+
+  /* Editorial width hierarchy — never one column for everything. */
+  --w-display: min(100%, 72rem);
+  --w-heading: min(100%, 46rem);
+  --w-body: min(100%, 38rem);
+  --w-caption: min(100%, 24rem);
 
   /* Radius */
   --radius-sm: 0.75rem;
@@ -56,6 +123,8 @@
   --z-overlay: 40;
   --z-navigation: 50;
   --z-modal: 100;
+  --z-botanical: 110;
+  --z-lightbox: 200;
 }
 
 /* =========================================================
@@ -81,13 +150,33 @@
   --color-butter: var(--butter);
   --color-rose: var(--rose);
 
+  --color-burgundy: var(--burgundy);
+  --color-maroon: var(--maroon);
+  --color-champagne: var(--champagne);
+  --color-taupe: var(--taupe);
+  --color-beige: var(--beige);
+  --color-charcoal: var(--charcoal);
+
+  --color-slate: var(--slate);
+  --color-slate-soft: var(--slate-soft);
+  --color-slate-deep: var(--slate-deep);
+  --color-slate-dark: var(--slate-dark);
+  --color-onyx: var(--onyx);
+  --color-obsidian: var(--obsidian);
+  --color-graphite: var(--graphite);
+  --color-smoke: var(--smoke);
+  --color-ash: var(--ash);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
 
-  --font-display: var(--font-italiana);
+  --font-display: var(--font-cormorant);
   --font-serif: var(--font-cormorant);
-  --font-body: var(--font-manrope);
+  --font-body: var(--font-jakarta);
+  --font-script: var(--font-pinyon);
   --font-arabic: var(--font-amiri);
 }
 
@@ -102,30 +191,52 @@
 }
 
 html {
-  background: var(--ivory);
+  background: var(--ink-900);
   color: var(--ink);
 }
 
 body {
+  /*
+   * Legacy aliases: Italiana was retired in favour of Cormorant, and Manrope in
+   * favour of Plus Jakarta Sans. Declared here because next/font exposes its
+   * variables on <body>, and they inherit to every module.
+   */
+  --font-italiana: var(--font-cormorant);
+  --font-manrope: var(--font-jakarta);
+
   margin: 0;
   min-height: 100vh;
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(246, 195, 51, 0.22),
-      transparent 35rem
-    ),
-    var(--ivory);
+  /* The page opens in the dark. Each zone paints its own surface from here on,
+     so there is no per-section colour switching. */
+  background: var(--ink-900);
 
   color: var(--ink);
 
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-jakarta), sans-serif;
 
   overflow-x: clip;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Grain is a single fixed layer rather than a per-section texture. No blend
+   mode: blending the whole viewport costs a full repaint on every scroll. */
+.grain::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  opacity: 0.035;
+
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  pointer-events: none;
 }
 
 body,

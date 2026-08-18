@@ -1,0 +1,159 @@
+/** @format */
+
+.veil {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: var(--z-botanical);
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* Every panel is parked off-centre once the curtain has opened, so what is
+   left behind reads as a border planting rather than a cover. */
+.panel {
+  position: absolute;
+
+  will-change: transform;
+}
+
+.side {
+  top: -4vh;
+
+  height: 108vh;
+
+  width: clamp(300px, 66vw, 720px);
+}
+
+.left {
+  left: 0;
+
+  transform-origin: 0% 60%;
+}
+
+.right {
+  right: 0;
+
+  transform-origin: 100% 60%;
+
+  transform: scaleX(-1);
+}
+
+.edge {
+  left: -6vw;
+
+  width: 112vw;
+
+  height: clamp(120px, 26vh, 300px);
+}
+
+.top {
+  top: 0;
+
+  transform-origin: 50% 0%;
+}
+
+.bottom {
+  bottom: 0;
+
+  transform-origin: 50% 100%;
+}
+
+.art {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+/* Foreground sprays sit closer to the camera — larger, softer, faster on
+   scroll. The blur is what sells the depth. */
+.fore {
+  position: absolute;
+
+  width: clamp(190px, 42vw, 460px);
+
+  height: clamp(260px, 56vw, 620px);
+
+  filter: blur(1.1px);
+
+  opacity: 0.88;
+
+  will-change: transform;
+}
+
+.foreTopLeft {
+  top: -6vh;
+
+  left: -8vw;
+
+  transform: rotate(186deg);
+}
+
+.foreBottomRight {
+  right: -9vw;
+
+  bottom: -7vh;
+
+  transform: scaleX(-1);
+}
+
+/* =========================================================
+   IDLE SWAY — plants in a very slow draught
+   ========================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+  .swayA {
+    animation: swayA 11s var(--ease-editorial) infinite alternate;
+  }
+
+  .swayB {
+    animation: swayB 13.5s var(--ease-editorial) infinite alternate;
+  }
+
+  .swayC {
+    animation: swayC 9.5s var(--ease-editorial) infinite alternate;
+  }
+}
+
+@keyframes swayA {
+  from {
+    transform: rotate(-0.7deg) translateY(0);
+  }
+
+  to {
+    transform: rotate(0.8deg) translateY(-5px);
+  }
+}
+
+@keyframes swayB {
+  from {
+    transform: rotate(0.6deg) translateY(-3px);
+  }
+
+  to {
+    transform: rotate(-0.75deg) translateY(4px);
+  }
+}
+
+@keyframes swayC {
+  from {
+    transform: rotate(-0.45deg);
+  }
+
+  to {
+    transform: rotate(0.5deg);
+  }
+}
+
+/* The sway wrapper is separate from the panel so GSAP owns one transform and
+   CSS owns the other — they never fight over the same property. */
+.sway {
+  width: 100%;
+
+  height: 100%;
+}

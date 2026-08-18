@@ -59,27 +59,29 @@
 
   border-radius: 50%;
 
-  background: rgba(143, 99, 20, 0.9);
+  background: rgba(58, 68, 76, 0.86);
 
   backdrop-filter: blur(8px);
 
-  color: var(--ivory);
+  color: var(--gold-light);
+
+  box-shadow: 0 10px 26px -16px rgba(30, 37, 42, 0.9);
 
   cursor: pointer;
 
   transition:
-    background 400ms ease,
-    transform 400ms ease;
+    background 400ms var(--ease-editorial),
+    transform 400ms var(--ease-editorial);
 }
 
 .music:hover {
   transform: translateY(-2px);
 
-  background: rgba(93, 58, 13, 0.95);
+  background: rgba(30, 37, 42, 0.94);
 }
 
 .music:focus-visible {
-  outline: 1px solid var(--gold-deep);
+  outline: 1px solid var(--gold-light);
 
   outline-offset: 4px;
 }
@@ -89,7 +91,7 @@
 
   inset: 0.3rem;
 
-  border: 1px solid rgba(255, 248, 233, 0.6);
+  border: 1px solid rgba(220, 192, 138, 0.75);
 
   border-top-color: transparent;
 
@@ -107,9 +109,9 @@
 }
 
 .musicCore {
-  font-family: var(--font-italiana), serif;
+  font-family: var(--font-cormorant), serif;
 
-  font-size: 0.72rem;
+  font-size: 0.8rem;
 
   letter-spacing: 0.06em;
 }
@@ -136,15 +138,17 @@
 
   border-radius: 50%;
 
-  background: rgba(143, 99, 20, 0.9);
+  background: rgba(58, 68, 76, 0.86);
 
   backdrop-filter: blur(8px);
+
+  box-shadow: 0 10px 26px -16px rgba(30, 37, 42, 0.9);
 
   cursor: pointer;
 }
 
 .menuTrigger:focus-visible {
-  outline: 1px solid var(--gold-deep);
+  outline: 1px solid var(--gold-light);
 
   outline-offset: 4px;
 }
@@ -162,7 +166,7 @@
 
   height: 1px;
 
-  background: var(--ivory);
+  background: var(--gold-light);
 }
 
 .panel {
@@ -185,10 +189,10 @@
   background:
     radial-gradient(
       circle at 50% 40%,
-      rgba(246, 195, 51, 0.28),
+      rgba(196, 173, 141, 0.34),
       transparent 55%
     ),
-    rgba(255, 248, 233, 0.97);
+    rgba(242, 235, 224, 0.97);
 
   backdrop-filter: blur(10px);
 
@@ -244,7 +248,7 @@
 
   padding: 0.6rem 1rem;
 
-  border: 1px solid rgba(143, 99, 20, 0.4);
+  border: 1px solid rgba(111, 89, 54, 0.45);
 
   border-radius: var(--radius-pill);
 
@@ -298,7 +302,7 @@
 
   border: 0;
 
-  border-bottom: 1px solid rgba(143, 99, 20, 0.18);
+  border-bottom: 1px solid rgba(111, 89, 54, 0.2);
 
   background: none;
 

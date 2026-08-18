@@ -1,41 +1,66 @@
 /** @format */
 
-import { CoupleJourney } from "@/components/invitation/couple/CoupleJourney";
+import { invitation } from "@/lib/invitation";
 
-import { ClosingJourney } from "@/components/invitation/closing/ClosingJourney";
+import { InvitationCover } from "@/components/invitation/cover/InvitationCover";
+import { VintageHero } from "@/components/invitation/hero/VintageHero";
+import { VerseSection } from "@/components/invitation/verse/VerseSection";
+import { CoupleSection } from "@/components/invitation/couple/CoupleSection";
 
-import { EventPavilion } from "@/components/invitation/event/EventPavilion";
+import { LightTransition } from "@/components/invitation/transition/LightTransition";
 
+import { SaveTheDate } from "@/components/invitation/savedate/SaveTheDate";
+import { EventSection } from "@/components/invitation/event/EventSection";
+import { StorySection } from "@/components/invitation/story/StorySection";
+import { EditorialBreak } from "@/components/invitation/editorial/EditorialBreak";
+import { GallerySection } from "@/components/invitation/gallery/GallerySection";
+import { QuoteSection } from "@/components/invitation/editorial/QuoteSection";
+import { InteractionSection } from "@/components/invitation/interaction/InteractionSection";
+import { ClosingSection } from "@/components/invitation/closing/ClosingSection";
+
+import { BotanicalVeil } from "@/components/invitation/botanical/BotanicalVeil";
 import { InvitationExperience } from "@/components/invitation/experience/InvitationExperience";
 
-import { GalleryJourney } from "@/components/invitation/gallery/GalleryJourney";
-
-import { InteractionJourney } from "@/components/invitation/interaction/InteractionJourney";
-
-import { OpeningSequence } from "@/components/invitation/opening/OpeningSequence";
-
-import { EnvelopeOverture } from "@/components/invitation/overture/EnvelopeOverture";
-
-import { StoryJourney } from "@/components/invitation/story/StoryJourney";
+import styles from "./page.module.css";
 
 export default function Home() {
+  const [journeyBreak] = invitation.breaks;
+
   return (
     <main>
-      <EnvelopeOverture />
+      <InvitationCover />
 
-      <OpeningSequence />
+      {/* Chapters one to three live in the dark. */}
+      <div className={`${styles.darkZone} grain`}>
+        <VintageHero />
 
-      <CoupleJourney />
+        <VerseSection />
 
-      <EventPavilion />
+        <CoupleSection />
+      </div>
 
-      <StoryJourney />
+      <LightTransition />
 
-      <GalleryJourney />
+      {/* Everything from Save The Date onward shares one ivory canvas. */}
+      <div className={`${styles.lightZone} grain`}>
+        <SaveTheDate />
 
-      <InteractionJourney />
+        <EventSection />
 
-      <ClosingJourney />
+        <StorySection />
+
+        {journeyBreak ? <EditorialBreak moment={journeyBreak} /> : null}
+
+        <GallerySection />
+
+        <QuoteSection />
+
+        <InteractionSection />
+
+        <ClosingSection />
+      </div>
+
+      <BotanicalVeil />
 
       <InvitationExperience />
     </main>

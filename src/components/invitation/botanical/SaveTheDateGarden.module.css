@@ -1,0 +1,180 @@
+/** @format */
+
+.garden {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: clip;
+
+  pointer-events: none;
+}
+
+.piece {
+  position: absolute;
+
+  display: block;
+
+  will-change: transform;
+}
+
+.art {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   MOBILE COMPOSITION — asymmetric on purpose. Never mirrored left/right.
+   --------------------------------------------------------------------------- */
+
+/* Rear: low, wide, almost dissolved into the canvas. */
+.rear {
+  right: -34vw;
+
+  bottom: -6vh;
+
+  width: 86vw;
+
+  opacity: 0.22;
+}
+
+/* Branch entering from the top left, about a fifth of the viewport. */
+.branch {
+  top: -4vh;
+
+  left: -14vw;
+
+  width: 54vw;
+
+  opacity: 0.5;
+
+  transform: rotate(172deg);
+}
+
+/* Main mass on the right, deliberately cropped by the edge. */
+.main {
+  right: -30vw;
+
+  bottom: -4vh;
+
+  width: 76vw;
+
+  opacity: 0.62;
+
+  transform: scaleX(-1);
+}
+
+/* Foreground, bottom left, softened so it reads as nearest. */
+.fore {
+  bottom: -10vh;
+
+  left: -26vw;
+
+  width: 64vw;
+
+  opacity: 0.5;
+
+  filter: blur(0.6px);
+}
+
+/* ---------------------------------------------------------------------------
+   DESKTOP — larger, entering further from the edges, centre still clean.
+   --------------------------------------------------------------------------- */
+
+@media (min-width: 900px) {
+  .rear {
+    right: -10vw;
+
+    width: 46vw;
+
+    opacity: 0.18;
+  }
+
+  .branch {
+    left: -6vw;
+
+    width: 30vw;
+  }
+
+  .main {
+    right: -8vw;
+
+    width: 38vw;
+
+    opacity: 0.58;
+  }
+
+  .fore {
+    left: -9vw;
+
+    bottom: -14vh;
+
+    width: 32vw;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   IDLE MOTION — every layer gets its own duration, delay and amplitude so the
+   planting never pulses in time with itself.
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .swayRear {
+    animation: swayRear 14s ease-in-out -3s infinite alternate;
+  }
+
+  .swayBranch {
+    animation: swayBranch 9s ease-in-out -1.5s infinite alternate;
+  }
+
+  .swayMain {
+    animation: swayMain 11.5s ease-in-out -5s infinite alternate;
+  }
+
+  .swayFore {
+    animation: swayFore 12.5s ease-in-out -8s infinite alternate;
+  }
+}
+
+@keyframes swayRear {
+  from {
+    transform: rotate(-0.4deg) translate3d(0, 2px, 0);
+  }
+
+  to {
+    transform: rotate(0.5deg) translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes swayBranch {
+  from {
+    transform: rotate(171deg) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: rotate(173.2deg) translate3d(0, 4px, 0);
+  }
+}
+
+@keyframes swayMain {
+  from {
+    transform: scaleX(-1) rotate(-0.7deg) translate3d(0, 3px, 0);
+  }
+
+  to {
+    transform: scaleX(-1) rotate(0.6deg) translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes swayFore {
+  from {
+    transform: rotate(0.6deg) translate3d(0, -2px, 0);
+  }
+
+  to {
+    transform: rotate(-0.8deg) translate3d(0, 4px, 0);
+  }
+}

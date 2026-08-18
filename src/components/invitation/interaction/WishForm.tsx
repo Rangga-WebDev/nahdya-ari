@@ -8,7 +8,7 @@ import { submitWish } from "@/lib/services/wishes";
 
 import type { Wish } from "@/types/invitation";
 
-import styles from "./InteractionJourney.module.css";
+import styles from "./InteractionSection.module.css";
 
 type WishFormProps = {
   onSubmitted: (wish: Wish) => void;

@@ -1,0 +1,593 @@
+/** @format */
+
+.gallery {
+  position: relative;
+
+  padding: var(--section-y-lg) var(--page-padding);
+
+  overflow: clip;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   HEADER — asymmetric, not a centred title block
+   ========================================================= */
+
+.head {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  width: var(--w-display);
+
+  margin-inline: auto;
+
+  margin-bottom: clamp(3rem, 10vh, 6rem);
+}
+
+.script {
+  margin: 0 0 0.4rem;
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(1.4rem, 5.5vw, 2.2rem);
+
+  line-height: 1;
+
+  color: var(--gold-deep);
+}
+
+.mask {
+  display: block;
+
+  overflow: hidden;
+
+  padding-block: 0.04em;
+}
+
+.heading {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2.8rem, 13vw, 7.5rem);
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: var(--ink);
+
+  will-change: transform;
+}
+
+.subtitle {
+  max-width: var(--w-caption);
+
+  margin: clamp(1.2rem, 4vh, 2rem) 0 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.72rem, 3vw, 0.8rem);
+
+  line-height: 1.9;
+
+  color: var(--muted);
+}
+
+.count {
+  margin-top: clamp(1rem, 3vh, 1.6rem);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.56rem, 2.3vw, 0.64rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  text-indent: 0.26em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+/* =========================================================
+   MOBILE COMPOSITION
+   Designed as its own rhythm, not a shrunken desktop grid:
+   full bleed → inset right → pair → wide → inset left.
+   ========================================================= */
+
+.plates {
+  display: flex;
+
+  flex-direction: column;
+
+  width: min(100%, 46rem);
+
+  margin-inline: auto;
+}
+
+.plate {
+  position: relative;
+
+  margin: 0;
+}
+
+.trigger {
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+
+  background: none;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.frame {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--canvas-deep);
+
+  clip-path: inset(0% 0% 100% 0%);
+}
+
+.media {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  transform: scale(1.06);
+
+  will-change: transform;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* Index + caption sit outside the picture, magazine style. */
+.plateMeta {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 0.6rem;
+
+  margin-top: 0.7rem;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.52rem, 2.2vw, 0.6rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+.plateIndex {
+  color: var(--gold-deep);
+}
+
+/* --- the rhythm --------------------------------------------------------- */
+
+/* 1 — full bleed, tall */
+.plate:nth-child(1) {
+  width: 100%;
+}
+
+.plate:nth-child(1) .frame {
+  aspect-ratio: 0.74;
+}
+
+/* 2 — inset right, smaller */
+.plate:nth-child(2) {
+  width: 68%;
+
+  margin-top: clamp(2.4rem, 8vh, 4rem);
+
+  margin-left: auto;
+}
+
+.plate:nth-child(2) .frame {
+  aspect-ratio: 0.7;
+}
+
+/* 3 + 4 — a pair, offset from each other */
+.plate:nth-child(3) {
+  width: 52%;
+
+  margin-top: clamp(3rem, 10vh, 5rem);
+}
+
+.plate:nth-child(3) .frame {
+  aspect-ratio: 0.68;
+}
+
+.plate:nth-child(4) {
+  width: 44%;
+
+  margin-top: clamp(-4rem, -10vw, -2rem);
+
+  margin-left: auto;
+
+  margin-right: 4%;
+}
+
+.plate:nth-child(4) .frame {
+  aspect-ratio: 0.72;
+}
+
+/* 5 — inset left */
+.plate:nth-child(5) {
+  width: 74%;
+
+  margin-top: clamp(3rem, 10vh, 5rem);
+}
+
+.plate:nth-child(5) .frame {
+  aspect-ratio: 0.72;
+}
+
+/* 6 — full bleed close */
+.plate:nth-child(6) {
+  width: 100%;
+
+  margin-top: clamp(2.6rem, 9vh, 4.4rem);
+}
+
+.plate:nth-child(6) .frame {
+  aspect-ratio: 0.78;
+}
+
+/* =========================================================
+   DESKTOP — asymmetric editorial grid
+   ========================================================= */
+
+@media (min-width: 900px) {
+  .head {
+    flex-direction: row;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 3rem;
+  }
+
+  .headLeft {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .headRight {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    text-align: right;
+  }
+
+  .subtitle {
+    margin-top: 0;
+  }
+
+  .plates {
+    display: grid;
+
+    width: var(--w-display);
+
+    grid-template-columns: repeat(12, 1fr);
+
+    align-items: start;
+
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .plate {
+    width: auto !important;
+
+    margin: 0 !important;
+  }
+
+  /* Large opener, left, spanning seven columns. */
+  .plate:nth-child(1) {
+    grid-column: 1 / span 7;
+  }
+
+  .plate:nth-child(1) .frame {
+    aspect-ratio: 1.32;
+  }
+
+  /* Tall portrait, right, pushed down to break the top line. */
+  .plate:nth-child(2) {
+    grid-column: 9 / span 4;
+
+    margin-top: clamp(4rem, 10vw, 9rem) !important;
+  }
+
+  .plate:nth-child(2) .frame {
+    aspect-ratio: 0.7;
+  }
+
+  /* Small square-ish, left, hanging under the opener. */
+  .plate:nth-child(3) {
+    grid-column: 2 / span 3;
+
+    margin-top: clamp(1rem, 3vw, 3rem) !important;
+  }
+
+  .plate:nth-child(3) .frame {
+    aspect-ratio: 0.82;
+  }
+
+  /* Wide landscape crossing the centre. */
+  .plate:nth-child(4) {
+    grid-column: 6 / span 6;
+
+    margin-top: clamp(3rem, 8vw, 7rem) !important;
+  }
+
+  .plate:nth-child(4) .frame {
+    aspect-ratio: 1.42;
+  }
+
+  /* Portrait, far left. */
+  .plate:nth-child(5) {
+    grid-column: 1 / span 4;
+
+    margin-top: clamp(2rem, 5vw, 4rem) !important;
+  }
+
+  .plate:nth-child(5) .frame {
+    aspect-ratio: 0.72;
+  }
+
+  /* Closing portrait, right. */
+  .plate:nth-child(6) {
+    grid-column: 7 / span 5;
+
+    margin-top: clamp(-6rem, -8vw, -3rem) !important;
+  }
+
+  .plate:nth-child(6) .frame {
+    aspect-ratio: 0.86;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .trigger .image {
+    transition: transform 0.9s var(--ease-editorial);
+  }
+
+  .trigger:hover .image {
+    transform: scale(1.025);
+  }
+
+  .trigger:hover .plateIndex {
+    color: var(--ink);
+  }
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: var(--z-lightbox);
+
+  display: grid;
+
+  place-items: center;
+
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+.lightboxBackdrop {
+  position: absolute;
+
+  inset: 0;
+
+  border: 0;
+
+  background: rgba(8, 8, 8, 0.94);
+
+  cursor: pointer;
+}
+
+.lightboxInner {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(0.8rem, 3vh, 1.4rem);
+
+  width: min(100%, 62rem);
+
+  max-height: 100%;
+}
+
+.lightboxBar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+
+.lightboxIndex {
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.56rem, 2.3vw, 0.64rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  color: rgba(239, 233, 223, 0.7);
+}
+
+.lightboxClose {
+  display: grid;
+
+  place-items: center;
+
+  width: 2.75rem;
+
+  height: 2.75rem;
+
+  border: 1px solid rgba(239, 233, 223, 0.28);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 1rem;
+
+  color: var(--on-dark);
+
+  cursor: pointer;
+
+  transition: background 0.5s var(--ease-editorial);
+}
+
+.lightboxClose:hover {
+  background: rgba(239, 233, 223, 0.12);
+}
+
+.lightboxFigure {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(0.7rem, 2vh, 1rem);
+
+  margin: 0;
+
+  min-height: 0;
+}
+
+.lightboxMedia {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.72;
+
+  max-height: 68svh;
+
+  overflow: hidden;
+
+  background: var(--ink-800);
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.lightboxFallback {
+  position: absolute;
+
+  inset: 0;
+}
+
+.lightboxCaption {
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.6rem, 2.5vw, 0.68rem);
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: rgba(239, 233, 223, 0.62);
+}
+
+.lightboxNav {
+  display: flex;
+
+  gap: 0.75rem;
+}
+
+.lightboxAction {
+  flex: 1;
+
+  min-height: 2.75rem;
+
+  padding: 0.8rem 1rem;
+
+  border: 1px solid rgba(239, 233, 223, 0.24);
+
+  border-radius: var(--radius-pill);
+
+  background: transparent;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.56rem, 2.3vw, 0.64rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: var(--on-dark);
+
+  cursor: pointer;
+
+  transition: background 0.5s var(--ease-editorial);
+}
+
+.lightboxAction:hover {
+  background: rgba(239, 233, 223, 0.12);
+}
+
+@media (min-width: 900px) {
+  .lightboxMedia {
+    aspect-ratio: 1.3;
+
+    max-height: 74svh;
+  }
+}

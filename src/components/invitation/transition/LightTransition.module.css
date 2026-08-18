@@ -1,0 +1,118 @@
+/** @format */
+
+/* A long cinematic wash. The height is what makes it read as a change of
+   environment rather than a colour swap at a section edge. */
+.transition {
+  position: relative;
+
+  height: clamp(72vh, 130vh, 150vh);
+
+  overflow: clip;
+
+  background: linear-gradient(
+    180deg,
+    var(--ink-900) 0%,
+    var(--ink-850) 12%,
+    var(--ink-700) 26%,
+    var(--wash-1) 42%,
+    var(--wash-2) 58%,
+    var(--wash-3) 74%,
+    var(--wash-4) 86%,
+    var(--canvas) 100%
+  );
+}
+
+/* Simulated light source rising through the wash — this is what keeps the
+   gradient from reading as a literal ramp. */
+.glow {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse 90% 42% at 50% 74%,
+      rgba(247, 244, 238, 0.55),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 60% 30% at 50% 90%,
+      rgba(255, 252, 246, 0.7),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 120% 50% at 50% 20%,
+      rgba(194, 160, 95, 0.09),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* Two lone silhouettes leaning into the wash. The only botanical outside the
+   opening and Save The Date. */
+.silhouette {
+  position: absolute;
+
+  opacity: 0.16;
+
+  color: var(--ink-900);
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+.silhouetteLeft {
+  top: 6%;
+
+  left: -12vw;
+
+  width: clamp(220px, 40vw, 620px);
+
+  transform: rotate(168deg);
+}
+
+.silhouetteRight {
+  right: -14vw;
+
+  bottom: 4%;
+
+  width: clamp(200px, 34vw, 540px);
+
+  transform: scaleX(-1) rotate(-6deg);
+}
+
+.art {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+}
+
+/* The word that carries the moment. Sits in the middle of the wash where the
+   contrast is lowest, so it is felt more than read. */
+.marker {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: max-content;
+
+  transform: translate(-50%, -50%);
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(2.4rem, 9vw, 6.5rem);
+
+  line-height: 1;
+
+  color: rgba(239, 233, 223, 0.5);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}

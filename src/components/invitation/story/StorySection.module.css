@@ -1,0 +1,238 @@
+/** @format */
+
+.story {
+  position: relative;
+
+  padding: var(--section-y) var(--page-padding);
+
+  overflow: clip;
+
+  isolation: isolate;
+}
+
+.toile {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.14;
+
+  color: var(--gold-light);
+
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 40rem);
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
+  position: relative;
+
+  margin-top: clamp(2.5rem, 8vh, 4rem);
+
+  padding-left: clamp(2.4rem, 10vw, 3.4rem);
+}
+
+/* The spine the whole story hangs from. */
+.spine {
+  position: absolute;
+
+  top: 0.7rem;
+
+  bottom: 0.7rem;
+
+  left: clamp(0.62rem, 2.6vw, 0.92rem);
+
+  width: 1px;
+
+  overflow: hidden;
+
+  background: rgba(176, 141, 87, 0.28);
+}
+
+.spineFill {
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--gold);
+
+  transform-origin: top;
+}
+
+.chapter {
+  position: relative;
+
+  padding-bottom: clamp(2.4rem, 8vh, 3.6rem);
+}
+
+.body {
+  position: relative;
+}
+
+.chapter:last-child {
+  padding-bottom: 0;
+}
+
+.node {
+  position: absolute;
+
+  top: 0.5rem;
+
+  left: calc(clamp(2.4rem, 10vw, 3.4rem) * -1);
+
+  display: grid;
+
+  width: clamp(1.25rem, 5.2vw, 1.85rem);
+
+  height: clamp(1.25rem, 5.2vw, 1.85rem);
+
+  place-items: center;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50%;
+
+  background: var(--canvas);
+}
+
+.nodeDot {
+  width: 0.34rem;
+
+  height: 0.34rem;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+}
+
+.count {
+  display: block;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.58rem, 2.3vw, 0.64rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  color: var(--muted);
+}
+
+.year {
+  display: block;
+
+  margin-top: 0.15rem;
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(1.6rem, 6.5vw, 2.2rem);
+
+  line-height: 1.1;
+
+  color: var(--gold);
+}
+
+.title {
+  margin: 0.2rem 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.45rem, 5.8vw, 1.95rem);
+
+  font-weight: 400;
+
+  color: var(--ink);
+}
+
+.text {
+  margin: clamp(0.7rem, 2.2vh, 1rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1rem, 3.8vw, 1.12rem);
+
+  line-height: 1.8;
+
+  color: var(--ink-soft);
+}
+
+.meta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  margin-top: clamp(0.7rem, 2.2vh, 1rem);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.58rem, 2.3vw, 0.64rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+.meta i {
+  display: block;
+
+  width: 1.3rem;
+
+  height: 1px;
+
+  background: var(--gold);
+
+  opacity: 0.6;
+}
+
+.closing {
+  margin: clamp(2.5rem, 8vh, 4rem) auto 0;
+
+  max-width: 28rem;
+
+  text-align: center;
+}
+
+.closingTitle {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: var(--gold-deep);
+}
+
+.closingText {
+  margin: clamp(0.7rem, 2.2vh, 1rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(0.98rem, 3.6vw, 1.08rem);
+
+  line-height: 1.8;
+
+  color: var(--ink-soft);
+}

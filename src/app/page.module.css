@@ -1,0 +1,54 @@
+/** @format */
+
+/* Two surfaces carry the whole page. Sections inside them are transparent, so
+   nothing reads as a stack of separate colour blocks. */
+
+.darkZone {
+  position: relative;
+
+  isolation: isolate;
+
+  background-color: var(--ink-900);
+
+  background-image:
+    radial-gradient(
+      ellipse 90% 55% at 50% 0%,
+      rgba(194, 160, 95, 0.07),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      var(--ink-900) 0%,
+      var(--ink-850) 26%,
+      var(--ink-800) 58%,
+      var(--ink-850) 82%,
+      var(--ink-900) 100%
+    );
+
+  color: var(--on-dark);
+}
+
+.lightZone {
+  position: relative;
+
+  isolation: isolate;
+
+  background-color: var(--canvas);
+
+  background-image:
+    radial-gradient(
+      ellipse 80% 40% at 50% 0%,
+      rgba(255, 253, 249, 0.9),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      var(--canvas) 0%,
+      var(--canvas-warm) 22%,
+      var(--canvas) 52%,
+      var(--canvas-soft) 78%,
+      var(--canvas) 100%
+    );
+
+  color: var(--ink);
+}

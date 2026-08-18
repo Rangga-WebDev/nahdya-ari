@@ -1,7 +1,12 @@
 /** @format */
 
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope, Italiana, Amiri } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Plus_Jakarta_Sans,
+  Pinyon_Script,
+  Amiri,
+} from "next/font/google";
 
 import { MotionProvider } from "@/components/providers/MotionProvider";
 
@@ -17,16 +22,9 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const italiana = Italiana({
-  variable: "--font-italiana",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
@@ -34,6 +32,14 @@ const amiri = Amiri({
   variable: "--font-amiri",
   subsets: ["arabic"],
   weight: ["400", "700"],
+  display: "swap",
+});
+
+/** Script is an accent only — section titles and the guest name. */
+const pinyon = Pinyon_Script({
+  variable: "--font-pinyon",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -91,7 +97,7 @@ export const viewport: Viewport = {
 
   viewportFit: "cover",
 
-  themeColor: "#fff8e9",
+  themeColor: "#3a444c",
 };
 
 export default function RootLayout({
@@ -102,7 +108,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${cormorant.variable} ${manrope.variable} ${italiana.variable} ${amiri.variable}`}
+        className={`${cormorant.variable} ${jakarta.variable} ${pinyon.variable} ${amiri.variable}`}
       >
         <MotionProvider>{children}</MotionProvider>
       </body>

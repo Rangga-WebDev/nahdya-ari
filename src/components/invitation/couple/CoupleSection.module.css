@@ -1,0 +1,299 @@
+/** @format */
+
+.couple {
+  position: relative;
+
+  padding: clamp(4.5rem, 14vh, 8rem) var(--page-padding)
+    clamp(8rem, 26vw, 13rem);
+
+  overflow: clip;
+
+  isolation: isolate;
+
+  background: transparent;
+}
+
+.toile {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.45;
+
+  color: var(--sage);
+
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 62rem);
+
+  margin-inline: auto;
+}
+
+.intro {
+  max-width: 30rem;
+
+  margin: clamp(1.2rem, 4vh, 2rem) auto 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1rem, 3.8vw, 1.2rem);
+
+  line-height: 1.7;
+
+  text-align: center;
+
+  color: var(--on-dark-soft);
+}
+
+.people {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: clamp(2.4rem, 8vh, 4rem);
+
+  margin-top: clamp(2.5rem, 8vh, 4rem);
+
+  perspective: 1100px;
+}
+
+.person {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: min(100%, 22rem);
+
+  text-align: center;
+}
+
+/* =========================================================
+   ARCH PORTRAIT
+   ========================================================= */
+
+.portrait {
+  position: relative;
+
+  width: min(100%, 17rem);
+
+  aspect-ratio: 0.74;
+
+  padding: 0.55rem;
+}
+
+/* Gold outline that traces the arch just outside the photo. */
+.portraitFrame {
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50% 50% 6px 6px / 40% 40% 6px 6px;
+
+  opacity: 0.75;
+}
+
+.portraitInner {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 50% 50% 4px 4px / 40% 40% 4px 4px;
+
+  background: var(--paper);
+}
+
+.portraitImage {
+  object-fit: cover;
+}
+
+.portraitFallback {
+  display: grid;
+
+  width: 100%;
+
+  height: 100%;
+
+  place-items: center;
+
+  background: linear-gradient(160deg, var(--paper-light), var(--beige));
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 4rem;
+
+  color: rgba(30, 37, 42, 0.35);
+}
+
+/* =========================================================
+   IDENTITY
+   ========================================================= */
+
+.name {
+  margin: clamp(1.1rem, 3.5vh, 1.7rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.7rem, 7vw, 2.4rem);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  color: var(--on-dark);
+}
+
+.role {
+  margin: 0.5rem 0 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.6rem, 2.4vw, 0.68rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.32em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-light);
+}
+
+.parents {
+  margin: clamp(0.9rem, 3vh, 1.3rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(0.98rem, 3.6vw, 1.1rem);
+
+  line-height: 1.6;
+
+  color: var(--on-dark-soft);
+}
+
+.parentsLabel {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.58rem, 2.3vw, 0.64rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: var(--on-dark-faint);
+}
+
+.social {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  min-height: 2.5rem;
+
+  margin-top: clamp(0.9rem, 3vh, 1.3rem);
+
+  padding: 0.55rem 1.1rem;
+
+  border: 1px solid rgba(58, 68, 76, 0.28);
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.6rem, 2.4vw, 0.68rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  color: var(--on-dark);
+
+  transition:
+    background 380ms var(--ease-editorial),
+    color 380ms var(--ease-editorial);
+}
+
+.social:hover {
+  background: var(--on-dark);
+
+  color: var(--ink-900);
+}
+
+.social:focus-visible {
+  outline: 1px solid var(--gold);
+
+  outline-offset: 3px;
+}
+
+.socialIcon {
+  width: 0.95rem;
+
+  height: 0.95rem;
+}
+
+.amp {
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2.6rem, 11vw, 3.8rem);
+
+  font-style: italic;
+
+  line-height: 1;
+
+  color: var(--gold-light);
+}
+
+/* =========================================================
+   DESKTOP — side by side, arch keeps the rhythm
+   ========================================================= */
+
+@media (min-width: 900px) {
+  .people {
+    flex-direction: row;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .person {
+    width: min(100%, 24rem);
+  }
+
+  .amp {
+    align-self: center;
+
+    margin-top: 7rem;
+  }
+
+  .portrait {
+    width: 100%;
+  }
+}

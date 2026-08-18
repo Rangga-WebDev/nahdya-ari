@@ -1,0 +1,173 @@
+/** @format */
+
+.verse {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: clamp(4.5rem, 14vh, 8rem) var(--page-padding);
+
+  overflow: clip;
+
+  isolation: isolate;
+
+  background: transparent;
+}
+
+.paper {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.5;
+
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 40%,
+    rgba(194, 160, 95, 0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.archWrap {
+  position: absolute;
+
+  top: clamp(1.5rem, 6vh, 3.5rem);
+
+  left: 50%;
+
+  width: min(23rem, 84vw);
+
+  aspect-ratio: 400 / 860;
+
+  transform: translateX(-50%);
+
+  color: rgba(243, 237, 225, 0.3);
+
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 34rem);
+
+  text-align: center;
+}
+
+.bismillah {
+  margin: 0 0 clamp(1.4rem, 4vh, 2.2rem);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.62rem, 2.5vw, 0.72rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.36em;
+
+  text-transform: uppercase;
+
+  color: var(--paper-light);
+}
+
+.arabic {
+  margin: 0;
+
+  font-family: var(--font-amiri), serif;
+
+  font-size: clamp(1.15rem, 4.6vw, 1.75rem);
+
+  line-height: 2.05;
+
+  color: var(--ivory);
+}
+
+.translation {
+  margin: clamp(1.4rem, 4vh, 2.2rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(0.98rem, 3.6vw, 1.18rem);
+
+  font-style: italic;
+
+  line-height: 1.75;
+
+  color: rgba(250, 246, 238, 0.92);
+}
+
+.reference {
+  margin: clamp(1.1rem, 3vh, 1.6rem) 0 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.62rem, 2.5vw, 0.7rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-light);
+}
+
+/* =========================================================
+   FRAMED PHOTO — the print that follows the verse
+   ========================================================= */
+
+.plate {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: var(--section-y) var(--page-padding);
+
+  background: transparent;
+}
+
+.mat {
+  position: relative;
+
+  width: min(100%, 26rem);
+
+  padding: clamp(0.9rem, 4vw, 1.5rem);
+
+  background: var(--canvas-warm);
+
+  box-shadow: 0 40px 90px -50px rgba(0, 0, 0, 0.9);
+}
+
+.matInner {
+  position: relative;
+
+  aspect-ratio: 0.82;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(176, 141, 87, 0.4);
+}
+
+.matImage {
+  object-fit: cover;
+}
+
+.caption {
+  margin: clamp(1rem, 3vh, 1.5rem) 0 0;
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+
+  text-align: center;
+
+  color: var(--gold-deep);
+}

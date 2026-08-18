@@ -34,6 +34,22 @@ export type WeddingEvent = {
   mapsUrl?: string;
 };
 
+export type EditorialMoment = {
+  id: string;
+  eyebrow?: string;
+  lines: string[];
+  image?: string;
+  objectPosition?: string;
+};
+
+export type LoveQuote = {
+  eyebrow?: string;
+  text: string;
+  author?: string;
+  image?: string;
+  objectPosition?: string;
+};
+
 export type QuranVerse = {
   arabic: string;
   translation: string;
@@ -68,6 +84,9 @@ export type InvitationData = {
   interaction: WeddingInteraction;
   experience: WeddingExperience;
   closing: WeddingClosing;
+
+  breaks: EditorialMoment[];
+  quote: LoveQuote;
 };
 
 /* =========================================================

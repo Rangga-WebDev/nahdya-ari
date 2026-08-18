@@ -1,0 +1,401 @@
+/** @format */
+
+.cover {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: var(--z-modal);
+
+  display: grid;
+
+  grid-template-rows: 1fr auto;
+
+  overflow: hidden;
+
+  background: var(--slate-dark);
+}
+
+.coverHidden {
+  pointer-events: none;
+}
+
+/* The intro state lives in CSS so a slow hydration can never flash the
+   finished cover before the botanical curtain has parted. GSAP takes over the
+   moment it boots and drops the attribute. */
+.cover[data-cover-stage] [data-cover-photo],
+.cover[data-cover-stage] [data-cover-frame],
+.cover[data-cover-stage] [data-cover-sprig],
+.cover[data-cover-stage] [data-cover-eyebrow],
+.cover[data-cover-stage] [data-cover-date],
+.cover[data-cover-stage] [data-cover-guest],
+.cover[data-cover-stage] [data-cover-open] {
+  opacity: 0;
+}
+
+.cover[data-cover-stage] [data-cover-name] {
+  opacity: 0;
+
+  transform: translateY(116%);
+}
+
+/* =========================================================
+   PHOTOGRAPH — the dominant element
+   ========================================================= */
+
+.photo {
+  position: absolute;
+
+  inset: 0;
+
+  will-change: transform;
+}
+
+.photoImage {
+  object-fit: cover;
+
+  object-position: 50% 32%;
+}
+
+/* Warm cinematic grade + vignette so the type stays readable. */
+.grade {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse 78% 62% at 50% 38%,
+      rgba(30, 37, 42, 0.12),
+      rgba(30, 37, 42, 0.62) 72%,
+      rgba(30, 37, 42, 0.88) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(30, 37, 42, 0.5) 0%,
+      rgba(30, 37, 42, 0.18) 32%,
+      rgba(30, 37, 42, 0.72) 74%,
+      rgba(30, 37, 42, 0.94) 100%
+    );
+}
+
+.grain {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.26;
+
+  background-image: radial-gradient(
+    rgba(243, 237, 225, 0.2) 0.5px,
+    transparent 0.5px
+  );
+
+  background-size: 3px 3px;
+
+  mix-blend-mode: soft-light;
+}
+
+/* =========================================================
+   ORNAMENT
+   ========================================================= */
+
+.frame {
+  position: absolute;
+
+  inset: clamp(0.75rem, 3vw, 1.6rem);
+
+  border: 1px solid rgba(220, 192, 138, 0.32);
+
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+
+  width: clamp(2rem, 7vw, 3.4rem);
+
+  height: clamp(2rem, 7vw, 3.4rem);
+
+  color: var(--gold-light);
+}
+
+.cornerTopLeft {
+  top: -1px;
+  left: -1px;
+}
+
+.cornerTopRight {
+  top: -1px;
+  right: -1px;
+
+  transform: scaleX(-1);
+}
+
+.cornerBottomLeft {
+  bottom: -1px;
+  left: -1px;
+
+  transform: scaleY(-1);
+}
+
+.cornerBottomRight {
+  right: -1px;
+  bottom: -1px;
+
+  transform: scale(-1);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+  position: relative;
+
+  z-index: 2;
+
+  grid-row: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: clamp(0.5rem, 1.6vh, 0.9rem);
+
+  padding: 0 clamp(1.6rem, 7vw, 3rem)
+    max(clamp(2.4rem, 7vh, 4rem), env(safe-area-inset-bottom));
+
+  text-align: center;
+}
+
+.sprig {
+  width: clamp(3.4rem, 13vw, 5.2rem);
+
+  color: var(--gold-light);
+
+  opacity: 0.85;
+}
+
+.eyebrow {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(0.85rem, 3.4vw, 1.05rem);
+
+  font-style: italic;
+
+  letter-spacing: 0.24em;
+
+  color: rgba(243, 237, 225, 0.86);
+}
+
+.nameMask {
+  overflow: hidden;
+
+  padding-bottom: 0.08em;
+}
+
+.name {
+  display: block;
+
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(3.2rem, 15vw, 5.6rem);
+
+  font-weight: 300;
+
+  line-height: 0.98;
+
+  letter-spacing: 0.01em;
+
+  color: var(--ivory);
+
+  text-shadow: 0 2px 24px rgba(30, 37, 42, 0.55);
+}
+
+.ampersand {
+  display: block;
+
+  margin: clamp(0.1rem, 0.8vh, 0.4rem) 0;
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(2.8rem, 12vw, 4.2rem);
+
+  line-height: 1;
+
+  color: var(--gold-light);
+
+  text-shadow: 0 2px 18px rgba(30, 37, 42, 0.65);
+}
+
+.date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.9rem;
+
+  margin: clamp(0.7rem, 2vh, 1.2rem) 0 0;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.64rem, 2.6vw, 0.74rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.34em;
+
+  text-transform: uppercase;
+
+  color: rgba(243, 237, 225, 0.82);
+}
+
+.date i {
+  display: block;
+
+  width: clamp(1.4rem, 6vw, 2.6rem);
+
+  height: 1px;
+
+  background: rgba(220, 192, 138, 0.6);
+}
+
+.guest {
+  margin: clamp(1.4rem, 4vh, 2.4rem) 0 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.4rem;
+}
+
+.guestLabel {
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.62rem, 2.5vw, 0.7rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: rgba(243, 237, 225, 0.62);
+}
+
+.guestName {
+  max-width: 20ch;
+
+  font-family: var(--font-pinyon), cursive;
+
+  font-size: clamp(1.8rem, 8vw, 2.7rem);
+
+  line-height: 1.24;
+
+  color: var(--gold-light);
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.open {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  margin-top: clamp(1.4rem, 4vh, 2.2rem);
+
+  min-height: 3rem;
+
+  padding: 0.85rem 1.9rem;
+
+  border: 1px solid rgba(220, 192, 138, 0.55);
+
+  border-radius: var(--radius-pill);
+
+  background: rgba(243, 237, 225, 0.09);
+
+  backdrop-filter: blur(6px);
+
+  color: var(--ivory);
+
+  cursor: pointer;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.62rem, 2.5vw, 0.7rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 500ms var(--ease-editorial),
+    border-color 500ms var(--ease-editorial),
+    transform 500ms var(--ease-editorial);
+}
+
+.open:hover {
+  background: rgba(220, 192, 138, 0.2);
+
+  border-color: var(--gold-light);
+
+  transform: translateY(-2px);
+}
+
+.open:focus-visible {
+  outline: 1px solid var(--gold-light);
+
+  outline-offset: 4px;
+}
+
+.openIcon {
+  width: 1rem;
+
+  height: 1rem;
+
+  color: var(--gold-light);
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  .content {
+    gap: clamp(0.6rem, 1.4vh, 1rem);
+
+    padding-bottom: clamp(3.5rem, 9vh, 6rem);
+  }
+
+  .name {
+    font-size: clamp(4.5rem, 7vw, 7.5rem);
+  }
+
+  .photoImage {
+    object-position: 50% 28%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo {
+    transform: none !important;
+  }
+}

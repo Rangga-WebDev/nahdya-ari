@@ -12,7 +12,7 @@ import type { RSVPSubmission } from "@/types/invitation";
 
 import { RSVPResult } from "./RSVPResult";
 
-import styles from "./InteractionJourney.module.css";
+import styles from "./InteractionSection.module.css";
 
 type Status = "idle" | "loading" | "success" | "error";
 

@@ -4,7 +4,7 @@ import { invitation } from "@/lib/invitation";
 
 import type { RSVPSubmission } from "@/types/invitation";
 
-import styles from "./InteractionJourney.module.css";
+import styles from "./InteractionSection.module.css";
 
 type RSVPResultProps = {
   submission: RSVPSubmission;

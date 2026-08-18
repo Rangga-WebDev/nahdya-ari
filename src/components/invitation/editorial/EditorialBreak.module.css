@@ -1,0 +1,140 @@
+/** @format */
+
+.break {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  height: clamp(28rem, 78svh, 46rem);
+
+  overflow: clip;
+
+  isolation: isolate;
+
+  background: var(--sogan-dark);
+}
+
+.media {
+  position: absolute;
+
+  inset: -12% 0 -12%;
+
+  will-change: transform;
+}
+
+.image {
+  object-fit: cover;
+
+  filter: saturate(0.86) contrast(0.97);
+}
+
+.veil {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(36, 32, 29, 0.62) 0%,
+    rgba(36, 32, 29, 0.42) 45%,
+    rgba(36, 32, 29, 0.72) 100%
+  );
+}
+
+/* Film grain keeps the still from looking like a flat stock photo. */
+.grain {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.3;
+
+  background-image: radial-gradient(
+    rgba(244, 239, 231, 0.16) 0.5px,
+    transparent 0.5px
+  );
+
+  background-size: 3px 3px;
+
+  mix-blend-mode: soft-light;
+
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 46rem);
+
+  padding-inline: var(--page-padding);
+
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 clamp(1.2rem, 3vh, 2rem);
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: clamp(0.62rem, 1.4vw, 0.72rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.42em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-light);
+}
+
+.lines {
+  margin: 0;
+}
+
+.lineMask {
+  overflow: hidden;
+
+  padding-bottom: 0.06em;
+}
+
+.line {
+  display: block;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(2rem, 6.4vw, 4.4rem);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  line-height: 1.16;
+
+  letter-spacing: -0.02em;
+
+  color: var(--ivory);
+}
+
+.rule {
+  display: block;
+
+  width: clamp(3rem, 12vw, 7rem);
+
+  height: 1px;
+
+  margin: clamp(1.6rem, 4vh, 2.6rem) auto 0;
+
+  background: rgba(205, 186, 154, 0.7);
+
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media {
+    inset: 0;
+  }
+}

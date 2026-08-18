@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import type { GiftAccount as GiftAccountType } from "@/types/invitation";
 
-import styles from "./InteractionJourney.module.css";
+import styles from "./InteractionSection.module.css";
 
 type GiftAccountProps = {
   account: GiftAccountType;
