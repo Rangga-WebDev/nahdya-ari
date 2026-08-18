@@ -368,8 +368,22 @@
   .chapter {
     bottom: 1.5rem;
 
-    font-size: 0.46rem;
+    font-size: 0.62rem;
 
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
+  }
+}
+
+/* MOBILE LEGIBILITY */
+
+@media (max-width: 768px) {
+  .eyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .closing {
+    font-size: 0.78rem;
   }
 }

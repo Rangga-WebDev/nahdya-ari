@@ -727,3 +727,25 @@
     animation: none;
   }
 }
+
+/* ==========================================
+   MOBILE LEGIBILITY
+   ========================================== */
+
+@media (max-width: 768px) {
+  .eyebrow {
+    font-size: 0.66rem;
+
+    letter-spacing: 0.32em;
+  }
+
+  .dateWrapper {
+    font-size: 0.64rem;
+
+    letter-spacing: 0.2em;
+  }
+
+  .scrollCue {
+    font-size: 0.64rem;
+  }
+}

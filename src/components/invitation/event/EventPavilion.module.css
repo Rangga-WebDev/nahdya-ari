@@ -761,3 +761,42 @@
     font-size: 1.8rem;
   }
 }
+
+/* =========================================
+   MOBILE LEGIBILITY
+   ========================================= */
+
+@media (max-width: 768px) {
+  .eventEyebrow,
+  .countdownEyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .eventDateHeader {
+    font-size: 0.66rem;
+
+    letter-spacing: 0.26em;
+  }
+
+  .eventVenue p {
+    font-size: 0.72rem;
+  }
+
+  .eventAction {
+    min-height: 2.75rem;
+
+    font-size: 0.62rem;
+  }
+
+  .countdownLabel {
+    font-size: 0.6rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .eventProgress {
+    display: none;
+  }
+}

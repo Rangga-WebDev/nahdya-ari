@@ -501,3 +501,38 @@
 
   color: var(--ink-soft);
 }
+
+/* =========================================================
+   MOBILE LEGIBILITY & TAP TARGETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .music,
+  .menuTrigger {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .panelEyebrow,
+  .identityLabel {
+    font-size: 0.64rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .panelClose {
+    min-height: 2.75rem;
+
+    font-size: 0.62rem;
+  }
+
+  .panelItem {
+    min-height: 2.75rem;
+
+    padding: 0.7rem 0;
+  }
+
+  .panelItem span {
+    font-size: 0.62rem;
+  }
+}

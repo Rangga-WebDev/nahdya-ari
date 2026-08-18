@@ -1005,3 +1005,42 @@
     text-align: right;
   }
 }
+
+/* =========================================================
+   MOBILE LEGIBILITY
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .role {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.32em;
+  }
+
+  .instagram {
+    font-size: 0.68rem;
+  }
+
+  .parentInfo > span {
+    font-size: 0.64rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .unionEyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .nextChapter {
+    font-size: 0.62rem;
+
+    letter-spacing: 0.22em;
+  }
+
+  .sceneIndex,
+  .progress {
+    display: none;
+  }
+}

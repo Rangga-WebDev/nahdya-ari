@@ -1078,3 +1078,43 @@
     display: none;
   }
 }
+
+/* =========================================================
+   MOBILE LEGIBILITY
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .introChapter,
+  .finaleYear {
+    font-size: 0.62rem;
+
+    letter-spacing: 0.24em;
+  }
+
+  .introEyebrow,
+  .finaleEyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .introYearField {
+    font-size: 0.64rem;
+  }
+
+  .chapterEyebrow {
+    font-size: 0.64rem;
+
+    letter-spacing: 0.28em;
+  }
+
+  .storyMeta {
+    font-size: 0.62rem;
+
+    letter-spacing: 0.14em;
+  }
+
+  .fallbackNumber {
+    font-size: 0.62rem;
+  }
+}
