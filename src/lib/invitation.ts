@@ -214,7 +214,7 @@ export const invitation: InvitationData = {
       {
         id: "memory-01",
         alt: "Nahdya and Ari walking together",
-        image: "/art/gallery/memory-01.jpeg",
+        image: "/art/gallery/memory-01.webp",
         year: "2019",
         location: "Poso",
         caption: "Some beginnings are quiet.",
@@ -224,7 +224,7 @@ export const invitation: InvitationData = {
       {
         id: "memory-02",
         alt: "Nahdya and Ari travelling together",
-        image: "/art/gallery/memory-03.jpeg",
+        image: "/art/gallery/memory-03.webp",
         year: "2023",
         location: "Sulawesi Tengah",
         caption: "A thousand little adventures.",
@@ -234,7 +234,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-03",
-        image: "/art/gallery/memory-02.jpeg",
+        image: "/art/gallery/memory-02.webp",
         alt: "A quiet portrait of Nahdya and Ari",
         year: "2024",
         caption: "The warmth between ordinary days.",
@@ -244,7 +244,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-04",
-        image: "/art/gallery/memory-04.jpeg",
+        image: "/art/gallery/memory-04.webp",
         alt: "Portrait from their journey",
         year: "2025",
         caption: "Finding home in another person.",
@@ -253,7 +253,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-05",
-        image: "/art/gallery/memory-05.jpeg",
+        image: "/art/gallery/memory-05.webp",
         alt: "Nahdya and Ari together",
         year: "2025",
         location: "Indonesia",
@@ -264,7 +264,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-06",
-        image: "/art/gallery/memory-06.jpeg",
+        image: "/art/gallery/memory-06.webp",
         alt: "Nahdya and Ari pre wedding portrait",
         year: "2026",
         location: "Poso",
@@ -373,6 +373,6 @@ export const invitation: InvitationData = {
     signature: "Nahdya & Ari",
 
     // Set to "/art/closing/couple.webp" once the asset is provided.
-    portrait: "/art/closing/couple.jpeg",
+    portrait: "/art/closing/couple.webp",
   },
 };
