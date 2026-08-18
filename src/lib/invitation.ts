@@ -8,10 +8,10 @@ export const invitation: InvitationData = {
     fullName: "Nahdya Andini Setyaningrum Antu, S.E.",
     nickname: "Nahdya",
 
-    role: "The Bride",
+    role: "Mempelai Wanita",
 
     quote:
-      "In you, I found the quiet place my heart had always been looking for.",
+      "Pada dirimu, aku menemukan ketenangan yang selama ini dicari hatiku.",
 
     portrait: "/art/couple/bride.webp",
 
@@ -25,11 +25,13 @@ export const invitation: InvitationData = {
     fullName: "Ari Azlansya, S.E.",
     nickname: "Ari",
 
-    role: "The Groom",
+    role: "Mempelai Pria",
 
     portrait: "/art/couple/groom.webp",
 
-    quote: "Every road feels like home when I know it leads me back to you.",
+    quote:
+      "Sejauh apa pun langkahku, setiap jalan terasa pulang bila menuju padamu.",
+
     father: "SUHARMAN",
     mother: "Hj. Arniati Arsyad",
     instagram: "@ariazlansya",
@@ -38,30 +40,40 @@ export const invitation: InvitationData = {
   weddingDate: "13.09.2026",
 
   opening: {
-    eyebrow: "The Wedding Of",
+    eyebrow: "Undangan Pernikahan",
     title: "Nahdya & Ari",
     message:
-      "With joyful hearts, we invite you to celebrate the beginning of our forever.",
+      "Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menjadi saksi awal perjalanan kami.",
   },
 
   introduction: {
-    eyebrow: "A Sacred Beginning",
+    eyebrow: "Bismillahirrahmanirrahim",
 
-    title: "Two souls, one promise.",
+    title: "Dua hati, satu janji.",
+
+    verse: {
+      arabic:
+        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+
+      translation:
+        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.",
+
+      reference: "QS. Ar-Rum : 21",
+    },
 
     message:
-      "Dengan penuh rasa syukur dan bahagia, kami mengundang Anda untuk menjadi bagian dari sebuah hari ketika dua perjalanan bertemu dan memulai satu kisah yang baru.",
+      "Dengan penuh rasa syukur dan bahagia, kami mengundang Anda untuk menjadi bagian dari hari ketika dua perjalanan bertemu dan memulai satu kisah yang baru.",
 
     closing:
-      "We would be honored to celebrate this beautiful beginning with you.",
+      "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.",
   },
 
   events: [
     {
       id: "ceremony",
 
-      eyebrow: "The Sacred Ceremony",
-      title: "Wedding Ceremony",
+      eyebrow: "Ijab & Kabul",
+      title: "Akad Nikah",
 
       date: "13 September 2026",
 
@@ -82,8 +94,8 @@ export const invitation: InvitationData = {
     {
       id: "reception",
 
-      eyebrow: "An Evening Celebration",
-      title: "Wedding Reception",
+      eyebrow: "Syukuran Pernikahan",
+      title: "Resepsi",
 
       date: "13 September 2026",
 
@@ -97,16 +109,16 @@ export const invitation: InvitationData = {
       venue: "Gedung Wanita",
 
       address:
-        "JQ44+37V, Gebang Rejo, Poso Kota, Poso Regency, Central Sulawesi 94612",
+        "JQ44+37V, Gebang Rejo, Poso Kota, Kabupaten Poso, Sulawesi Tengah 94612",
 
       mapsUrl: "https://maps.app.goo.gl/EsBnMG3z5mrd5uaLA",
     },
   ],
 
   story: {
-    eyebrow: "A Journey Written Slowly",
+    eyebrow: "Perjalanan yang Ditulis Perlahan",
 
-    title: "Our story, in four chapters.",
+    title: "Kisah kami, dalam empat babak.",
 
     chapters: [
       {
@@ -116,9 +128,9 @@ export const invitation: InvitationData = {
 
         date: "Pertengahan 2019",
 
-        eyebrow: "Where It Started",
+        eyebrow: "Awal Mula",
 
-        title: "The first hello.",
+        title: "Sapa pertama.",
 
         story:
           "Tidak ada yang benar-benar istimewa pada hari itu, sampai sebuah percakapan sederhana perlahan menjadi awal dari sesuatu yang tidak pernah kami rencanakan.",
@@ -135,14 +147,15 @@ export const invitation: InvitationData = {
 
         year: "2024",
 
-        date: "Pertengahan 2023",
+        date: "Akhir 2024",
 
-        eyebrow: "Growing Together",
+        eyebrow: "Semakin Dekat",
 
-        title: "A little closer.",
+        title: "Sedikit lebih dekat.",
 
         story:
-          "2023/2024 mempunyai pasangan masing-masing tapi takdir mempertemukan di akhir tahun 2024 di mana pertemuan itu memunculkan rasa yang menjadi awal kisah percintaan keduanya.",
+          "Tahun 2023 dan 2024 kami sempat berjalan di jalur masing-masing, hingga takdir kembali mempertemukan di penghujung 2024. Dari pertemuan itulah tumbuh rasa yang menjadi awal kisah kami berdua.",
+
         location: "Poso",
 
         align: "right",
@@ -157,12 +170,13 @@ export const invitation: InvitationData = {
 
         date: "Pertengahan 2025",
 
-        eyebrow: "A Promise",
+        eyebrow: "Sebuah Janji",
 
-        title: "Choosing us.",
+        title: "Memilih kita.",
 
         story:
-          " mulai berkeinginan ingin melanjutkan ke jenjang yg lebih serius yaitu ke pernikahan setelah itu mulailah mengumpulkan modal untuk ke jenjang pernikahan tersebut ",
+          "Kami mulai berniat melangkah ke jenjang yang lebih serius. Sejak itu kami bersama-sama menyiapkan segala sesuatunya, sedikit demi sedikit, menuju hari yang kami impikan.",
+
         location: "Poso",
 
         align: "left",
@@ -175,14 +189,14 @@ export const invitation: InvitationData = {
 
         year: "2026",
 
-        date: "14 Juni 2026",
+        date: "13 September 2026",
 
-        eyebrow: "The Beginning of Forever",
+        eyebrow: "Awal dari Selamanya",
 
-        title: "And now, forever.",
+        title: "Dan kini, selamanya.",
 
         story:
-          "Setelah semua perjalanan yang membawa kami sampai di sini, kini kami ingin memulai bab baru—berjalan dalam satu arah, membangun satu rumah, dan menulis cerita yang sama.",
+          "Setelah semua perjalanan yang membawa kami sampai di sini, kini kami ingin memulai bab baru: berjalan dalam satu arah, membangun satu rumah, dan menulis cerita yang sama.",
 
         location: "Poso",
 
@@ -193,41 +207,41 @@ export const invitation: InvitationData = {
     ],
 
     closing: {
-      eyebrow: "Every Road Led Here",
+      eyebrow: "Semua Jalan Menuju Ke Sini",
 
-      title: "And the best chapter is still unwritten.",
+      title: "Dan bab terindah belum selesai ditulis.",
 
       message:
-        "What began as two separate journeys has become one story we now choose to continue together.",
+        "Apa yang bermula sebagai dua perjalanan kini menjadi satu kisah yang kami pilih untuk dilanjutkan bersama.",
     },
   },
 
   gallery: {
-    eyebrow: "Fragments of Us",
+    eyebrow: "Serpihan Kenangan",
 
-    title: "Memories",
+    title: "Kenangan",
 
     subtitle:
-      "A collection of quiet moments, laughter, journeys, and everything in between.",
+      "Kumpulan momen sederhana, tawa, perjalanan, dan segala hal di antaranya.",
 
     items: [
       {
         id: "memory-01",
-        alt: "Nahdya and Ari walking together",
+        alt: "Nahdya dan Ari berjalan bersama",
         image: "/art/gallery/memory-01.webp",
         year: "2019",
         location: "Poso",
-        caption: "Some beginnings are quiet.",
+        caption: "Ada awal yang datang tanpa suara.",
         size: "portrait",
       },
 
       {
         id: "memory-02",
-        alt: "Nahdya and Ari travelling together",
+        alt: "Nahdya dan Ari dalam sebuah perjalanan",
         image: "/art/gallery/memory-03.webp",
         year: "2023",
         location: "Sulawesi Tengah",
-        caption: "A thousand little adventures.",
+        caption: "Seribu petualangan kecil.",
         size: "landscape",
         objectPosition: "50% 50%",
       },
@@ -235,9 +249,9 @@ export const invitation: InvitationData = {
       {
         id: "memory-03",
         image: "/art/gallery/memory-02.webp",
-        alt: "A quiet portrait of Nahdya and Ari",
+        alt: "Potret tenang Nahdya dan Ari",
         year: "2024",
-        caption: "The warmth between ordinary days.",
+        caption: "Hangat yang lahir dari hari-hari biasa.",
         size: "tall",
         objectPosition: "0% 50%",
       },
@@ -245,19 +259,19 @@ export const invitation: InvitationData = {
       {
         id: "memory-04",
         image: "/art/gallery/memory-04.webp",
-        alt: "Portrait from their journey",
+        alt: "Potret dari perjalanan mereka",
         year: "2025",
-        caption: "Finding home in another person.",
+        caption: "Menemukan rumah pada seseorang.",
         size: "portrait",
       },
 
       {
         id: "memory-05",
         image: "/art/gallery/memory-05.webp",
-        alt: "Nahdya and Ari together",
+        alt: "Nahdya dan Ari bersama",
         year: "2025",
         location: "Indonesia",
-        caption: "Every season brought us closer.",
+        caption: "Setiap musim membawa kami lebih dekat.",
         size: "landscape",
         objectPosition: "0% 20%",
       },
@@ -265,29 +279,29 @@ export const invitation: InvitationData = {
       {
         id: "memory-06",
         image: "/art/gallery/memory-06.webp",
-        alt: "Nahdya and Ari pre wedding portrait",
+        alt: "Potret prewedding Nahdya dan Ari",
         year: "2026",
         location: "Poso",
-        caption: "Right before forever begins.",
+        caption: "Tepat sebelum selamanya dimulai.",
         size: "tall",
       },
     ],
 
     closing: {
-      eyebrow: "The Moments We Keep",
+      eyebrow: "Kenangan yang Kami Simpan",
 
-      title: "Some memories never need words.",
+      title: "Sebagian kenangan tak perlu kata.",
 
       message:
-        "They simply stay with us—quietly becoming part of the story we carry forward.",
+        "Ia hanya tinggal, diam-diam menjadi bagian dari kisah yang kami bawa ke depan.",
     },
   },
 
   interaction: {
     rsvp: {
-      eyebrow: "Répondez S'il Vous Plaît",
+      eyebrow: "Konfirmasi Kehadiran",
 
-      title: "Will you join our celebration?",
+      title: "Berkenankah Anda hadir?",
 
       message:
         "Kehadiran Anda adalah kebahagiaan bagi kami. Mohon konfirmasi agar kami dapat menyambut Anda dengan sebaik-baiknya.",
@@ -296,9 +310,9 @@ export const invitation: InvitationData = {
     },
 
     wishes: {
-      eyebrow: "Guest Book",
+      eyebrow: "Buku Tamu",
 
-      title: "Leave a wish for our new beginning.",
+      title: "Tinggalkan doa untuk awal baru kami.",
 
       message:
         "Setiap doa dan harapan yang Anda tuliskan akan kami simpan sebagai bagian dari cerita ini.",
@@ -307,12 +321,12 @@ export const invitation: InvitationData = {
     gifts: {
       enabled: true,
 
-      eyebrow: "Wedding Gift",
+      eyebrow: "Hadiah Pernikahan",
 
-      title: "Your presence is the greatest gift.",
+      title: "Kehadiran Anda adalah hadiah terindah.",
 
       message:
-        "For those who wish to send a token of love, the details below are available with our deepest gratitude.",
+        "Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan tanda kasih, berikut kami sertakan informasinya dengan penuh rasa terima kasih.",
 
       accounts: [
         {
@@ -331,9 +345,9 @@ export const invitation: InvitationData = {
       ],
 
       address: {
-        label: "Gift Address",
+        label: "Alamat Pengiriman Hadiah",
         value:
-          "JQ44+37V, Gebang Rejo, Poso Kota, Poso Regency, Central Sulawesi 94612",
+          "JQ44+37V, Gebang Rejo, Poso Kota, Kabupaten Poso, Sulawesi Tengah 94612",
       },
     },
   },
@@ -352,27 +366,26 @@ export const invitation: InvitationData = {
     },
 
     chapters: [
-      { id: "beginning", label: "The Beginning" },
-      { id: "couple", label: "The Couple" },
-      { id: "day", label: "The Day" },
-      { id: "story", label: "Our Story" },
-      { id: "memories", label: "Memories" },
-      { id: "rsvp", label: "RSVP" },
-      { id: "closing", label: "With Love" },
+      { id: "beginning", label: "Pembuka" },
+      { id: "couple", label: "Mempelai" },
+      { id: "day", label: "Hari Bahagia" },
+      { id: "story", label: "Kisah Kami" },
+      { id: "memories", label: "Kenangan" },
+      { id: "rsvp", label: "Kehadiran" },
+      { id: "closing", label: "Penutup" },
     ],
   },
 
   closing: {
-    eyebrow: "With Love",
+    eyebrow: "Dengan Penuh Cinta",
 
-    title: "Thank you for being part of our story.",
+    title: "Terima kasih telah menjadi bagian dari kisah kami.",
 
     message:
-      "Your prayers, presence, and love mean more to us than words can say.",
+      "Doa, kehadiran, dan kasih sayang Anda berarti lebih dari yang mampu kami ucapkan.",
 
     signature: "Nahdya & Ari",
 
-    // Set to "/art/closing/couple.webp" once the asset is provided.
     portrait: "/art/closing/couple.webp",
   },
 };

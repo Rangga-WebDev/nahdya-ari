@@ -2,6 +2,11 @@
 
 import { invitation } from "@/lib/invitation";
 
+import {
+  GoldenDust,
+  LightRays,
+} from "@/components/invitation/effects/AmbientEffects";
+
 import styles from "./GalleryJourney.module.css";
 
 export function GalleryIntro() {
@@ -11,6 +16,9 @@ export function GalleryIntro() {
 
   return (
     <div className={`${styles.layer} ${styles.introScene}`} data-gallery-intro>
+      <LightRays opacity={0.42} speed="110s" />
+
+      <GoldenDust count={24} intensity={0.7} />
       <span
         className={styles.introGlow}
         data-gallery-intro-glow
@@ -18,7 +26,7 @@ export function GalleryIntro() {
       />
 
       <p className={styles.introChapter} data-gallery-intro-small>
-        Chapter VI
+        Bab V
       </p>
 
       <div className={styles.introContent}>

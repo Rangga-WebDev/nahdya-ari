@@ -22,7 +22,7 @@ export function EventActions({ event }: EventActionsProps) {
           rel="noreferrer"
           className={styles.eventAction}
         >
-          <span>View Location</span>
+          <span>Lihat Lokasi</span>
 
           <span className={styles.actionIcon} aria-hidden="true">
             ↗
@@ -30,7 +30,7 @@ export function EventActions({ event }: EventActionsProps) {
         </a>
       ) : (
         <span className={`${styles.eventAction} ${styles.eventActionDisabled}`}>
-          <span>Location Soon</span>
+          <span>Lokasi Menyusul</span>
 
           <span className={styles.actionIcon}>—</span>
         </span>
@@ -42,7 +42,7 @@ export function EventActions({ event }: EventActionsProps) {
         rel="noreferrer"
         className={styles.eventAction}
       >
-        <span>Add to Calendar</span>
+        <span>Simpan ke Kalender</span>
 
         <span className={styles.actionIcon} aria-hidden="true">
           +

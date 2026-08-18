@@ -39,10 +39,16 @@ export function useCoupleJourneyMotion(scope: RefObject<HTMLElement | null>) {
 
         gsap.set("[data-bride-portrait]", {
           clipPath: "inset(100% 0 0 0 round 45% 45% 2rem 2rem)",
+          rotateY: -32,
+          z: -240,
+          transformOrigin: "right center",
         });
 
         gsap.set("[data-groom-portrait]", {
           clipPath: "inset(100% 0 0 0 round 45% 45% 2rem 2rem)",
+          rotateY: 32,
+          z: -240,
+          transformOrigin: "left center",
         });
 
         gsap.set(
@@ -127,9 +133,13 @@ export function useCoupleJourneyMotion(scope: RefObject<HTMLElement | null>) {
             {
               clipPath: "inset(0% 0 0 0 round 45% 45% 2rem 2rem)",
 
-              duration: 0.13,
+              rotateY: 0,
 
-              ease: "power4.out",
+              z: 0,
+
+              duration: 0.15,
+
+              ease: "power3.out",
             },
             0.02,
           )
@@ -279,9 +289,13 @@ export function useCoupleJourneyMotion(scope: RefObject<HTMLElement | null>) {
             {
               clipPath: "inset(0% 0 0 0 round 45% 45% 2rem 2rem)",
 
-              duration: 0.13,
+              rotateY: 0,
 
-              ease: "power4.out",
+              z: 0,
+
+              duration: 0.15,
+
+              ease: "power3.out",
             },
             0.37,
           )

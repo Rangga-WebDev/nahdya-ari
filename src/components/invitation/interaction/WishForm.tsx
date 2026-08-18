@@ -48,7 +48,7 @@ export function WishForm({ onSubmitted }: WishFormProps) {
       setError(
         cause instanceof Error
           ? cause.message
-          : "Your wish could not be saved. Please try again.",
+          : "Doa Anda belum tersimpan. Silakan coba lagi.",
       );
 
       setStatus("error");
@@ -59,7 +59,7 @@ export function WishForm({ onSubmitted }: WishFormProps) {
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="wish-name">
-          Name
+          Nama
         </label>
 
         <input
@@ -77,7 +77,7 @@ export function WishForm({ onSubmitted }: WishFormProps) {
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="wish-message">
-          Your Wish
+          Doa & Harapan
         </label>
 
         <textarea
@@ -100,12 +100,12 @@ export function WishForm({ onSubmitted }: WishFormProps) {
 
       {status === "sent" ? (
         <p className={styles.stateNote} role="status">
-          Thank you — your wish has been added to our guest book.
+          Terima kasih — doa Anda telah kami simpan di buku tamu.
         </p>
       ) : null}
 
       <button type="submit" className={styles.submit} disabled={loading}>
-        <span>{loading ? "Sending" : "Send Wish"}</span>
+        <span>{loading ? "Mengirim" : "Kirim Doa"}</span>
 
         <span className={styles.submitIcon} aria-hidden="true">
           {loading ? "◌" : "→"}

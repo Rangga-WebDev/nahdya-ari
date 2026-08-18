@@ -54,6 +54,9 @@ export function useWeddingMusic() {
     config.enabled ? "loading" : "unavailable",
   );
 
+  /** Once the guest pauses on purpose, stop trying to start playback for them. */
+  const dismissedRef = useRef(false);
+
   useEffect(() => {
     if (!config.enabled) return;
 
@@ -83,7 +86,42 @@ export function useWeddingMusic() {
     audio.addEventListener("pause", onPause);
     audio.addEventListener("error", onError);
 
+    /*
+     * Browsers reject audio playback until the page has been interacted with,
+     * so the optimistic attempt below usually fails on a first visit. The
+     * gesture listeners then start the song at the guest's first tap, scroll or
+     * key press, and detach as soon as playback actually begins.
+     */
+    const gestures = ["pointerdown", "touchend", "keydown"] as const;
+
+    const detachGestures = () => {
+      gestures.forEach((event) =>
+        window.removeEventListener(event, attemptAutoplay),
+      );
+    };
+
+    function attemptAutoplay() {
+      if (dismissedRef.current) return;
+
+      if (!audio.paused) return;
+
+      audio
+        .play()
+        .then(detachGestures)
+        .catch(() => {
+          /* Still blocked: keep waiting for the next gesture. */
+        });
+    }
+
+    gestures.forEach((event) =>
+      window.addEventListener(event, attemptAutoplay, { passive: true }),
+    );
+
+    attemptAutoplay();
+
     return () => {
+      detachGestures();
+
       audio.removeEventListener("canplaythrough", onReady);
       audio.removeEventListener("loadedmetadata", onReady);
       audio.removeEventListener("play", onPlay);
@@ -104,10 +142,14 @@ export function useWeddingMusic() {
     if (!audio || state === "unavailable") return;
 
     if (!audio.paused) {
+      dismissedRef.current = true;
+
       audio.pause();
 
       return;
     }
+
+    dismissedRef.current = false;
 
     try {
       await audio.play();

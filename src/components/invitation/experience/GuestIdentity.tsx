@@ -15,7 +15,7 @@ export function GuestIdentity() {
 
   return (
     <div className={styles.identity} data-interaction-panel>
-      <p className={styles.identityLabel}>Dear</p>
+      <p className={styles.identityLabel}>Kepada Yth.</p>
 
       <p className={styles.identityName}>{name}</p>
 

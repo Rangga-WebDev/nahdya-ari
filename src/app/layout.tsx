@@ -1,7 +1,7 @@
 /** @format */
 
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope, Italiana } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Italiana, Amiri } from "next/font/google";
 
 import { MotionProvider } from "@/components/providers/MotionProvider";
 
@@ -30,9 +30,16 @@ const italiana = Italiana({
   display: "swap",
 });
 
+const amiri = Amiri({
+  variable: "--font-amiri",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 const coupleTitle = `${invitation.bride.firstName} & ${invitation.groom.firstName}`;
 
-const description = `Join us in celebrating the wedding of ${coupleTitle} on ${invitation.weddingDate}.`;
+const description = `Dengan memohon rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i ke pernikahan ${coupleTitle} pada ${invitation.weddingDate}.`;
 
 /**
  * Set `NEXT_PUBLIC_SITE_URL` to the production origin so Open Graph assets
@@ -43,7 +50,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
-  title: `${coupleTitle} — Wedding Invitation`,
+  title: `${coupleTitle} — Undangan Pernikahan`,
 
   description,
 
@@ -52,11 +59,11 @@ export const metadata: Metadata = {
 
     url: siteUrl,
 
-    title: `${coupleTitle} — Wedding Invitation`,
+    title: `${coupleTitle} — Undangan Pernikahan`,
 
     description,
 
-    siteName: `${coupleTitle} Wedding`,
+    siteName: `Pernikahan ${coupleTitle}`,
 
     locale: "id_ID",
   },
@@ -64,7 +71,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: `${coupleTitle} — Wedding Invitation`,
+    title: `${coupleTitle} — Undangan Pernikahan`,
 
     description,
   },
@@ -95,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${cormorant.variable} ${manrope.variable} ${italiana.variable}`}
+        className={`${cormorant.variable} ${manrope.variable} ${italiana.variable} ${amiri.variable}`}
       >
         <MotionProvider>{children}</MotionProvider>
       </body>

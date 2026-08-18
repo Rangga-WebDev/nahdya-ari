@@ -81,14 +81,19 @@ export function useEventPavilionMotion(scope: RefObject<HTMLElement | null>) {
             {
               scale: 0.9,
               opacity: 0,
+              rotateX: -52,
+              z: -320,
+              transformOrigin: "top center",
             },
             {
               scale: 1,
               opacity: 1,
+              rotateX: 0,
+              z: 0,
 
-              duration: 0.12,
+              duration: 0.15,
 
-              ease: "power4.out",
+              ease: "power3.out",
             },
             0.01,
           )
@@ -191,6 +196,8 @@ export function useEventPavilionMotion(scope: RefObject<HTMLElement | null>) {
             "[data-ceremony-layer] [data-event-pavilion]",
             {
               yPercent: -4,
+
+              rotateX: 9,
 
               duration: 0.22,
             },
@@ -366,6 +373,8 @@ export function useEventPavilionMotion(scope: RefObject<HTMLElement | null>) {
             "[data-reception-layer] [data-event-pavilion]",
             {
               yPercent: -7,
+
+              rotateX: -14,
 
               scale: 0.96,
 

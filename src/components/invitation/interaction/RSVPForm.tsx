@@ -66,7 +66,7 @@ export function RSVPForm() {
       setError(
         cause instanceof Error
           ? cause.message
-          : "Something went wrong. Please try again.",
+          : "Terjadi kesalahan. Silakan coba lagi.",
       );
 
       setStatus("error");
@@ -89,7 +89,7 @@ export function RSVPForm() {
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-name">
-          Name
+          Nama
         </label>
 
         <input
@@ -107,7 +107,7 @@ export function RSVPForm() {
       </div>
 
       <fieldset className={styles.fieldset}>
-        <legend className={styles.label}>Attendance</legend>
+        <legend className={styles.label}>Kehadiran</legend>
 
         <div className={styles.choices}>
           <label className={styles.choice}>
@@ -122,7 +122,7 @@ export function RSVPForm() {
 
             <span className={styles.choiceMark} aria-hidden="true" />
 
-            <span>Joyfully Accept</span>
+            <span>Dengan senang hati hadir</span>
           </label>
 
           <label className={styles.choice}>
@@ -137,7 +137,7 @@ export function RSVPForm() {
 
             <span className={styles.choiceMark} aria-hidden="true" />
 
-            <span>Regretfully Decline</span>
+            <span>Mohon maaf, berhalangan</span>
           </label>
         </div>
       </fieldset>
@@ -145,7 +145,7 @@ export function RSVPForm() {
       {attending ? (
         <div className={styles.field}>
           <span className={styles.label} id="rsvp-guests-label">
-            Number of Guests
+            Jumlah Tamu
           </span>
 
           <div
@@ -158,7 +158,7 @@ export function RSVPForm() {
               className={styles.counterButton}
               onClick={() => setGuestCount((value) => Math.max(1, value - 1))}
               disabled={disabled || guestCount <= 1}
-              aria-label="Decrease number of guests"
+              aria-label="Kurangi jumlah tamu"
             >
               −
             </button>
@@ -172,19 +172,19 @@ export function RSVPForm() {
                 setGuestCount((value) => Math.min(config.maxGuests, value + 1))
               }
               disabled={disabled || guestCount >= config.maxGuests}
-              aria-label="Increase number of guests"
+              aria-label="Tambah jumlah tamu"
             >
               +
             </button>
           </div>
 
-          <p className={styles.hint}>Maximum {config.maxGuests} guests.</p>
+          <p className={styles.hint}>Maksimal {config.maxGuests} tamu.</p>
         </div>
       ) : null}
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-message">
-          A Note For Us
+          Pesan untuk Kami
         </label>
 
         <textarea
@@ -206,7 +206,7 @@ export function RSVPForm() {
       ) : null}
 
       <button type="submit" className={styles.submit} disabled={disabled}>
-        <span>{disabled ? "Sending" : "Send RSVP"}</span>
+        <span>{disabled ? "Mengirim" : "Kirim Konfirmasi"}</span>
 
         <span className={styles.submitIcon} aria-hidden="true">
           {disabled ? "◌" : "→"}

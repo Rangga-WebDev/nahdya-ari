@@ -101,6 +101,8 @@
 
   width: min(100%, 31rem);
 
+  perspective: 1500px;
+
   will-change: clip-path, transform;
 }
 
@@ -159,6 +161,8 @@
   position: relative;
 
   width: min(100%, 31rem);
+
+  perspective: 1500px;
 
   will-change: clip-path, transform;
 }

@@ -30,7 +30,9 @@ export async function submitRSVP(payload: RSVPSubmission): Promise<RSVPRecord> {
   const guestName = payload.guestName.trim();
 
   if (!guestName) {
-    throw new Error("Please write your name so we know who is coming.");
+    throw new Error(
+      "Mohon tuliskan nama Anda agar kami tahu siapa yang hadir.",
+    );
   }
 
   if (!Number.isFinite(payload.guestCount) || payload.guestCount < 1) {

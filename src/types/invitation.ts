@@ -34,9 +34,16 @@ export type WeddingEvent = {
   mapsUrl?: string;
 };
 
+export type QuranVerse = {
+  arabic: string;
+  translation: string;
+  reference: string;
+};
+
 export type WeddingIntroduction = {
   eyebrow: string;
   title: string;
+  verse: QuranVerse;
   message: string;
   closing: string;
 };

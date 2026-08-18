@@ -52,10 +52,10 @@ export function GiftAccount({ account }: GiftAccountProps) {
       <button type="button" className={styles.giftAction} onClick={handleCopy}>
         <span>
           {state === "copied"
-            ? "Copied"
+            ? "Tersalin"
             : state === "failed"
-              ? "Copy Manually"
-              : "Copy Account"}
+              ? "Salin Manual"
+              : "Salin Nomor"}
         </span>
 
         <span className={styles.submitIcon} aria-hidden="true">
@@ -65,9 +65,9 @@ export function GiftAccount({ account }: GiftAccountProps) {
 
       <span className={styles.giftStatus} role="status">
         {state === "copied"
-          ? "Account number copied to your clipboard."
+          ? "Nomor rekening telah disalin."
           : state === "failed"
-            ? "Clipboard unavailable — please select the number manually."
+            ? "Papan klip tidak tersedia — mohon salin nomornya secara manual."
             : ""}
       </span>
     </article>

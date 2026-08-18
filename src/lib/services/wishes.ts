@@ -14,14 +14,15 @@ const seedWishes: Wish[] = [
     id: "wish-seed-01",
     author: "Sarah",
     message:
-      "May your home always be filled with laughter, patience, and warm mornings.",
+      "Semoga rumah kalian selalu dipenuhi tawa, kesabaran, dan pagi yang hangat.",
     createdAt: "2026-01-04T09:00:00.000Z",
   },
 
   {
     id: "wish-seed-02",
     author: "Daniel",
-    message: "To a lifetime of beautiful adventures, side by side.",
+    message:
+      "Selamat menempuh hidup baru. Semoga selalu berjalan beriringan sampai akhir.",
     createdAt: "2026-01-06T09:00:00.000Z",
   },
 
@@ -49,11 +50,11 @@ export async function submitWish(input: {
   const message = input.message.trim();
 
   if (!author) {
-    throw new Error("Please write your name.");
+    throw new Error("Mohon tuliskan nama Anda.");
   }
 
   if (message.length < 4) {
-    throw new Error("Please write a slightly longer wish.");
+    throw new Error("Mohon tuliskan doa yang sedikit lebih panjang.");
   }
 
   await delay(600);

@@ -140,7 +140,7 @@
 }
 
 .eyebrow {
-  margin-bottom: clamp(1.3rem, 3vh, 2rem);
+  margin-bottom: clamp(0.8rem, 1.8vh, 1.2rem);
 
   font-family: var(--font-manrope), sans-serif;
 
@@ -163,11 +163,11 @@
   align-items: baseline;
   justify-content: center;
 
-  margin-bottom: clamp(1rem, 2vh, 1.6rem);
+  margin-bottom: clamp(0.6rem, 1.4vh, 1rem);
 
   font-family: var(--font-cormorant), serif;
 
-  font-size: clamp(2.7rem, 6vw, 4.3rem);
+  font-size: clamp(2rem, 4.2vw, 3rem);
 
   line-height: 1;
 
@@ -193,19 +193,19 @@
 }
 
 .title {
-  max-width: 11ch;
+  max-width: 13ch;
 
   margin: 0;
 
   font-family: var(--font-italiana), serif;
 
-  font-size: clamp(3.5rem, 8.2vw, 7.5rem);
+  font-size: clamp(2.5rem, 5.4vw, 4.6rem);
 
   font-weight: 400;
 
-  line-height: 0.91;
+  line-height: 0.95;
 
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
 
   text-wrap: balance;
 
@@ -223,7 +223,7 @@
 
   gap: 0.8rem;
 
-  margin: clamp(1.8rem, 4vh, 3rem) 0;
+  margin: clamp(1rem, 2.2vh, 1.6rem) 0;
 }
 
 .divider span {
@@ -249,6 +249,71 @@
 
 /* BODY */
 
+.verse {
+  position: relative;
+
+  width: min(100%, 36rem);
+
+  margin: 0;
+
+  padding: clamp(0.85rem, 2vw, 1.25rem) clamp(0.75rem, 2vw, 1.5rem);
+
+  overflow: hidden;
+
+  border-top: 1px solid rgba(143, 99, 20, 0.24);
+  border-bottom: 1px solid rgba(143, 99, 20, 0.24);
+}
+
+.verseArabic {
+  margin: 0;
+
+  font-family: var(--font-amiri), serif;
+
+  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+
+  font-weight: 400;
+
+  line-height: 1.95;
+
+  color: var(--sogan-dark);
+
+  text-align: center;
+}
+
+.verseTranslation {
+  margin: clamp(0.7rem, 1.6vh, 1.1rem) 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+
+  font-style: italic;
+
+  line-height: 1.6;
+
+  color: var(--ink-soft);
+
+  text-align: center;
+}
+
+.verseReference {
+  margin-top: 0.7rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.6rem, 1.2vw, 0.68rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.26em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+
+  text-align: center;
+}
+
 .message {
   max-width: 36rem;
 
@@ -268,7 +333,7 @@
 .closing {
   max-width: 30rem;
 
-  margin: clamp(1rem, 2vh, 1.5rem) 0 0;
+  margin: clamp(0.7rem, 1.6vh, 1.1rem) 0 0;
 
   font-family: var(--font-manrope), sans-serif;
 
@@ -290,7 +355,7 @@
 
   align-items: center;
 
-  margin-top: clamp(1.5rem, 3vh, 2.4rem);
+  margin-top: clamp(0.9rem, 2vh, 1.5rem);
 
   font-family: var(--font-cormorant), serif;
 

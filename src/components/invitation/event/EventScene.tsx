@@ -4,6 +4,11 @@ import type { WeddingEvent } from "@/types/invitation";
 
 import { EventActions } from "./EventActions";
 
+import {
+  GoldenDust,
+  LightRays,
+} from "@/components/invitation/effects/AmbientEffects";
+
 import styles from "./EventPavilion.module.css";
 
 type EventSceneProps = {
@@ -27,6 +32,10 @@ export function EventScene({ event, variant }: EventSceneProps) {
         data-event-atmosphere
         aria-hidden="true"
       />
+
+      <LightRays opacity={isCeremony ? 0.42 : 0.6} top="-34%" speed="95s" />
+
+      <GoldenDust count={isCeremony ? 24 : 32} intensity={0.8} />
 
       <div
         className={styles.giantDate}
@@ -93,7 +102,7 @@ export function EventScene({ event, variant }: EventSceneProps) {
 
         <i />
 
-        <span>{isCeremony ? "Ceremony" : "Reception"}</span>
+        <span>{isCeremony ? "Akad" : "Resepsi"}</span>
       </div>
     </article>
   );

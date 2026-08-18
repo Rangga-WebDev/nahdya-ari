@@ -65,26 +65,26 @@ export function WeddingCountdown({ target }: WeddingCountdownProps) {
   if (countdown?.complete) {
     return (
       <div className={styles.countdownComplete}>
-        The beautiful day has arrived.
+        Hari bahagia itu telah tiba.
       </div>
     );
   }
 
   return (
     <div className={styles.countdown} data-event-countdown aria-live="polite">
-      <CountdownItem value={countdown?.days} label="Days" />
+      <CountdownItem value={countdown?.days} label="Hari" />
 
       <CountdownSeparator />
 
-      <CountdownItem value={countdown?.hours} label="Hours" />
+      <CountdownItem value={countdown?.hours} label="Jam" />
 
       <CountdownSeparator />
 
-      <CountdownItem value={countdown?.minutes} label="Minutes" />
+      <CountdownItem value={countdown?.minutes} label="Menit" />
 
       <CountdownSeparator />
 
-      <CountdownItem value={countdown?.seconds} label="Seconds" />
+      <CountdownItem value={countdown?.seconds} label="Detik" />
     </div>
   );
 }

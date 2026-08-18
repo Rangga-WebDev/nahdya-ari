@@ -76,12 +76,20 @@ export function useInteractionJourneyMotion(
           if (panels.length) {
             timeline.fromTo(
               panels,
-              { opacity: 0, y: 34 },
+              {
+                opacity: 0,
+                y: 34,
+                rotateX: -46,
+                z: -180,
+                transformOrigin: "top center",
+              },
               {
                 opacity: 1,
                 y: 0,
+                rotateX: 0,
+                z: 0,
                 stagger: 0.12,
-                duration: 1,
+                duration: 1.25,
                 ease: "power3.out",
               },
               0.3,
@@ -91,12 +99,19 @@ export function useInteractionJourneyMotion(
           if (gifts.length) {
             timeline.fromTo(
               gifts,
-              { opacity: 0, y: 28 },
+              {
+                opacity: 0,
+                y: 28,
+                rotateY: (i: number) => (i % 2 === 0 ? -30 : 30),
+                z: -160,
+              },
               {
                 opacity: 1,
                 y: 0,
+                rotateY: 0,
+                z: 0,
                 stagger: 0.1,
-                duration: 0.9,
+                duration: 1.1,
                 ease: "power3.out",
               },
               0.35,

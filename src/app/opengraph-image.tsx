@@ -10,7 +10,7 @@ export const contentType = "image/png";
 
 const coupleTitle = `${invitation.bride.firstName} & ${invitation.groom.firstName}`;
 
-export const alt = `${coupleTitle} — Wedding Invitation`;
+export const alt = `${coupleTitle} — Undangan Pernikahan`;
 
 /**
  * Subsets the display serif straight from Google Fonts. Returns `null` when the

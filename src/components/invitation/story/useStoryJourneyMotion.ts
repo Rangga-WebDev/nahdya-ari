@@ -47,7 +47,11 @@ export function useStoryJourneyMotion(scope: RefObject<HTMLElement | null>) {
           });
 
           gsap.set(`${scene} [data-story-image]`, {
-            clipPath: "inset(100% 0 0 0)",
+            rotateY: index % 2 === 0 ? -38 : 38,
+            rotateX: 12,
+            z: -300,
+            opacity: 0,
+            transformOrigin: index % 2 === 0 ? "left center" : "right center",
           });
 
           gsap.set(`${scene} [data-story-title]`, {
@@ -246,11 +250,14 @@ export function useStoryJourneyMotion(scope: RefObject<HTMLElement | null>) {
             .to(
               `${scene} [data-story-image]`,
               {
-                clipPath: "inset(0% 0 0 0)",
+                rotateY: 0,
+                rotateX: 0,
+                z: 0,
+                opacity: 1,
 
-                duration: 0.075,
+                duration: 0.09,
 
-                ease: "power4.out",
+                ease: "power3.out",
               },
               start + 0.015,
             )
@@ -318,12 +325,16 @@ export function useStoryJourneyMotion(scope: RefObject<HTMLElement | null>) {
               ? {
                   xPercent: chapter.align === "left" ? 8 : -8,
 
+                  rotateY: chapter.align === "left" ? -7 : 7,
+
                   scale: 1.045,
 
                   duration: 0.11,
                 }
               : {
                   yPercent: -4,
+
+                  rotateX: -6,
 
                   scale: 1.025,
 

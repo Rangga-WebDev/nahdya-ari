@@ -49,7 +49,7 @@ export function EventPavilion() {
 
         <div className={styles.countdownWrapper} data-countdown-wrapper>
           <span className={styles.countdownEyebrow}>
-            Counting down to forever
+            Menghitung hari menuju bahagia
           </span>
 
           <WeddingCountdown target={ceremony.dateTime} />

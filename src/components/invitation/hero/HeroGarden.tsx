@@ -5,6 +5,12 @@ import { HeroBotanical } from "./HeroBotanical";
 import { HeroPalace } from "./HeroPalace";
 import { HeroTypography } from "./HeroTypography";
 
+import {
+  GoldenDust,
+  LightRays,
+  BokehOrbs,
+} from "@/components/invitation/effects/AmbientEffects";
+
 import styles from "./HeroGarden.module.css";
 
 export function HeroGarden() {
@@ -12,6 +18,10 @@ export function HeroGarden() {
     <div className={styles.hero} data-hero-root>
       <div className={styles.viewport}>
         <HeroAtmosphere />
+
+        <LightRays opacity={0.55} top="-38%" speed="80s" />
+
+        <BokehOrbs count={6} />
 
         <div
           className={styles.distantLandscape}
@@ -35,8 +45,10 @@ export function HeroGarden() {
 
         <HeroBotanical />
 
+        <GoldenDust count={34} intensity={0.85} />
+
         <div className={styles.scrollCue} data-scroll-cue aria-hidden="true">
-          <span>Scroll to enter</span>
+          <span>Gulir untuk membuka</span>
 
           <div className={styles.scrollLine}>
             <div className={styles.scrollLineInner} />

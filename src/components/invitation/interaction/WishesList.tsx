@@ -14,7 +14,7 @@ export function WishesList({ wishes, status, error }: WishesListProps) {
   if (status === "loading") {
     return (
       <p className={styles.stateNote} role="status">
-        Gathering wishes…
+        Memuat doa…
       </p>
     );
   }
@@ -22,7 +22,7 @@ export function WishesList({ wishes, status, error }: WishesListProps) {
   if (status === "error") {
     return (
       <p className={styles.error} role="alert">
-        {error ?? "The guest book could not be opened right now."}
+        {error ?? "Buku tamu belum dapat dibuka saat ini."}
       </p>
     );
   }
@@ -30,7 +30,7 @@ export function WishesList({ wishes, status, error }: WishesListProps) {
   if (wishes.length === 0) {
     return (
       <p className={styles.stateNote}>
-        The first page is still blank. Yours could be the first wish.
+        Halaman pertama masih kosong. Doa Anda bisa menjadi yang pertama.
       </p>
     );
   }
@@ -58,7 +58,7 @@ function formatDate(value: string) {
 
   if (Number.isNaN(date.getTime())) return "";
 
-  return new Intl.DateTimeFormat("en-GB", {
+  return new Intl.DateTimeFormat("id-ID", {
     day: "2-digit",
     month: "short",
     year: "numeric",

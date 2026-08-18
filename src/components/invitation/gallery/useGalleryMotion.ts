@@ -202,12 +202,15 @@ export function useGalleryMotion(scope: RefObject<HTMLElement | null>) {
 
           const cards = gsap.utils.toArray<HTMLElement>("[data-gallery-card]");
 
-          cards.forEach((card) => {
+          cards.forEach((card, index) => {
             const frame = card.querySelector("[data-gallery-card-frame]");
 
             const caption = card.querySelector("[data-gallery-card-caption]");
 
             const media = card.querySelector("[data-gallery-card-media]");
+
+            /* Alternate the hinge so the rail never feels repetitive. */
+            const fromLeft = index % 2 === 0;
 
             const timeline = gsap.timeline({
               scrollTrigger: {
@@ -222,11 +225,22 @@ export function useGalleryMotion(scope: RefObject<HTMLElement | null>) {
             if (frame) {
               timeline.fromTo(
                 frame,
-                { clipPath: "inset(100% 0 0 0)" },
                 {
-                  clipPath: "inset(0% 0 0 0)",
-                  duration: 1.15,
-                  ease: "power4.out",
+                  rotateY: fromLeft ? -34 : 34,
+                  rotateX: 14,
+                  rotateZ: fromLeft ? -4 : 4,
+                  z: -260,
+                  opacity: 0,
+                  transformOrigin: fromLeft ? "left center" : "right center",
+                },
+                {
+                  rotateY: 0,
+                  rotateX: 0,
+                  rotateZ: 0,
+                  z: 0,
+                  opacity: 1,
+                  duration: 1.5,
+                  ease: "power3.out",
                 },
                 0,
               );
@@ -235,8 +249,8 @@ export function useGalleryMotion(scope: RefObject<HTMLElement | null>) {
             if (media) {
               timeline.fromTo(
                 media,
-                { scale: 1.14 },
-                { scale: 1, duration: 1.4, ease: "power3.out" },
+                { scale: 1.22 },
+                { scale: 1, duration: 1.7, ease: "power3.out" },
                 0,
               );
             }
@@ -244,11 +258,38 @@ export function useGalleryMotion(scope: RefObject<HTMLElement | null>) {
             if (caption) {
               timeline.fromTo(
                 caption,
-                { opacity: 0, y: 18 },
-                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-                0.35,
+                { opacity: 0, y: 20, rotateX: -22 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  rotateX: 0,
+                  duration: 0.9,
+                  ease: "power3.out",
+                },
+                0.4,
               );
             }
+
+            /* Keeps tilting gently while the card travels through the viewport. */
+            gsap.fromTo(
+              card,
+              { rotateZ: fromLeft ? 1.6 : -1.6 },
+              {
+                rotateZ: fromLeft ? -1.6 : 1.6,
+
+                ease: "none",
+
+                scrollTrigger: {
+                  trigger: card,
+
+                  start: "top bottom",
+
+                  end: "bottom top",
+
+                  scrub: 1.2,
+                },
+              },
+            );
           });
 
           reveal("[data-gallery-finale-title]", {

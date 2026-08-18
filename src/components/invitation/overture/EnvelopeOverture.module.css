@@ -1,0 +1,416 @@
+/** @format */
+
+.gate {
+  position: fixed;
+  inset: 0;
+
+  z-index: 200;
+
+  display: grid;
+  place-items: center;
+
+  padding: var(--page-padding);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 32%,
+      rgba(255, 250, 226, 0.95),
+      transparent 55%
+    ),
+    linear-gradient(165deg, #fffdf7 0%, #fff1cf 45%, #f0c789 100%);
+}
+
+.gateHidden {
+  pointer-events: none;
+}
+
+/* =========================================================
+   3D STAGE
+   ========================================================= */
+
+.stage {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  perspective: 1700px;
+
+  perspective-origin: 50% 42%;
+}
+
+.envelope {
+  position: relative;
+
+  width: min(30rem, 84vw);
+
+  aspect-ratio: 1.45;
+
+  transform-style: preserve-3d;
+
+  transform: rotateX(9deg);
+
+  will-change: transform;
+}
+
+/* Back wall of the pocket. */
+.pocket {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 0.6rem;
+
+  background: linear-gradient(160deg, #f6d9a4, #e0a95f);
+
+  box-shadow: 0 50px 90px -50px rgba(93, 58, 13, 0.75);
+}
+
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+.letter {
+  position: absolute;
+
+  left: 7%;
+  right: 7%;
+  bottom: 7%;
+
+  height: 58%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 0.4rem;
+
+  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(0.8rem, 2vw, 1.2rem)
+    clamp(1.1rem, 3.5vw, 1.8rem);
+
+  transform: translateZ(1px);
+
+  border-radius: 0.35rem;
+
+  background: linear-gradient(170deg, #fffdf7, #fff6e2);
+
+  box-shadow: 0 18px 40px -28px rgba(93, 58, 13, 0.6);
+
+  will-change: transform;
+}
+
+.letterFrame {
+  position: absolute;
+
+  inset: 0.4rem;
+
+  border: 1px solid rgba(143, 99, 20, 0.28);
+
+  border-radius: 0.2rem;
+
+  pointer-events: none;
+}
+
+.letterEyebrow {
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.5rem, 1.4vw, 0.6rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.letterNames {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  color: var(--sogan-dark);
+
+  text-align: center;
+}
+
+.letterAmp {
+  font-style: italic;
+
+  color: var(--gold-deep);
+}
+
+.letterRule {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  width: min(11rem, 46%);
+}
+
+.letterRule span {
+  flex: 1;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-deep),
+    transparent
+  );
+}
+
+.letterRule i {
+  width: 4px;
+  height: 4px;
+
+  transform: rotate(45deg);
+
+  border: 1px solid var(--gold-deep);
+}
+
+.letterDate {
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: clamp(0.58rem, 1.6vw, 0.68rem);
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  color: var(--sogan-deep);
+}
+
+/* =========================================================
+   POCKET FRONT + FLAP
+   ========================================================= */
+
+.front {
+  position: absolute;
+
+  inset: 0;
+
+  transform: translateZ(14px);
+
+  border-radius: 0.6rem;
+
+  background: linear-gradient(175deg, #ffeec6, #edbe77);
+
+  clip-path: polygon(0 32%, 50% 68%, 100% 32%, 100% 100%, 0 100%);
+
+  box-shadow: inset 0 1px 0 rgba(255, 253, 240, 0.6);
+}
+
+.frontEdge {
+  position: absolute;
+
+  inset: 0;
+
+  transform: translateZ(15px);
+
+  clip-path: polygon(0 32%, 50% 68%, 100% 32%, 100% 33%, 50% 69%, 0 33%);
+
+  background: rgba(143, 99, 20, 0.34);
+}
+
+.flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 46%;
+
+  transform-origin: top center;
+
+  transform: translateZ(15px) rotateX(0deg);
+
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+  background: linear-gradient(185deg, #fff1cf, #e9bd7f);
+
+  backface-visibility: hidden;
+
+  will-change: transform;
+}
+
+.flapShade {
+  position: absolute;
+
+  inset: 0;
+
+  clip-path: inherit;
+
+  background: linear-gradient(180deg, transparent 55%, rgba(143, 99, 20, 0.22));
+}
+
+/* =========================================================
+   SEAL
+   ========================================================= */
+
+.seal {
+  position: absolute;
+
+  top: 40%;
+  left: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  width: clamp(3.2rem, 12vw, 4.2rem);
+
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%) translateZ(22px);
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 36% 32%, #d2552f, #8f2f16 70%);
+
+  box-shadow:
+    0 10px 22px -10px rgba(93, 20, 6, 0.8),
+    inset 0 2px 6px rgba(255, 220, 200, 0.35);
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1rem, 3.6vw, 1.3rem);
+
+  color: rgba(255, 240, 220, 0.92);
+
+  letter-spacing: 0.04em;
+
+  will-change: transform;
+}
+
+/* =========================================================
+   GUEST + ACTION
+   ========================================================= */
+
+.guest {
+  margin-top: clamp(1.6rem, 5vh, 2.6rem);
+
+  text-align: center;
+}
+
+.guestLabel {
+  margin: 0 0 0.5rem;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.34em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.guestName {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.3rem, 5vw, 1.9rem);
+
+  line-height: 1.2;
+
+  color: var(--sogan-dark);
+
+  overflow-wrap: anywhere;
+}
+
+.open {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin-top: clamp(1.4rem, 4vh, 2.2rem);
+
+  min-height: 3rem;
+
+  padding: 0.9rem 1.6rem;
+
+  border: 1px solid var(--sogan-dark);
+
+  border-radius: var(--radius-pill);
+
+  background: var(--sogan-dark);
+
+  color: var(--ivory);
+
+  cursor: pointer;
+
+  font-family: var(--font-manrope), sans-serif;
+
+  font-size: 0.64rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.open:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 18px 30px -18px rgba(93, 58, 13, 0.9);
+}
+
+.open:focus-visible {
+  outline: 2px solid var(--gold-deep);
+
+  outline-offset: 4px;
+}
+
+.openIcon {
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .envelope {
+    width: 88vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope {
+    transform: none;
+  }
+}

@@ -44,6 +44,8 @@
   place-items: center;
 
   overflow: hidden;
+
+  perspective: 1800px;
 }
 
 .ceremonyScene {

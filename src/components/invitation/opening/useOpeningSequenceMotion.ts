@@ -42,7 +42,6 @@ export function useOpeningSequenceMotion(scope: RefObject<HTMLElement | null>) {
           [
             "[data-sacred-eyebrow]",
             "[data-sacred-monogram]",
-            "[data-sacred-message]",
             "[data-sacred-closing]",
             "[data-sacred-signature]",
             "[data-sacred-chapter]",
@@ -52,6 +51,12 @@ export function useOpeningSequenceMotion(scope: RefObject<HTMLElement | null>) {
             y: 22,
           },
         );
+
+        gsap.set("[data-sacred-verse]", {
+          opacity: 0,
+          y: 34,
+          scale: 0.96,
+        });
 
         gsap.set("[data-sacred-divider]", {
           opacity: 0,
@@ -238,6 +243,107 @@ export function useOpeningSequenceMotion(scope: RefObject<HTMLElement | null>) {
               yoyo: true,
             });
           });
+
+        /*
+         * ==========================================
+         * AMBIENT BREATHING
+         *
+         * Continuous loops that keep the sacred frame
+         * alive independently of the scroll position.
+         * ==========================================
+         */
+
+        gsap.to("[data-sacred-glow]", {
+          opacity: 0.72,
+
+          scale: 1.14,
+
+          duration: 4.6,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-sacred-monogram]", {
+          scale: 1.045,
+
+          duration: 3.4,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-sacred-arch]", {
+          scale: 1.018,
+
+          duration: 6.5,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-sacred-decoration-left]", {
+          rotate: 2.2,
+
+          yPercent: -2,
+
+          duration: 7,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-sacred-decoration-right]", {
+          rotate: -2.2,
+
+          yPercent: -2,
+
+          duration: 7.6,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-hero-sun]", {
+          scale: 1.12,
+
+          opacity: 0.82,
+
+          duration: 5.4,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
+
+        gsap.to("[data-hero-haze]", {
+          xPercent: 4,
+
+          duration: 9,
+
+          ease: "sine.inOut",
+
+          repeat: -1,
+
+          yoyo: true,
+        });
 
         /*
          * ==========================================
@@ -606,12 +712,13 @@ export function useOpeningSequenceMotion(scope: RefObject<HTMLElement | null>) {
           )
 
           .to(
-            "[data-sacred-message]",
+            "[data-sacred-verse]",
             {
               opacity: 1,
               y: 0,
+              scale: 1,
 
-              duration: 0.17,
+              duration: 0.19,
 
               ease: "power3.out",
             },
@@ -695,7 +802,7 @@ export function useOpeningSequenceMotion(scope: RefObject<HTMLElement | null>) {
             "[data-sacred-monogram]",
             "[data-sacred-title]",
             "[data-sacred-divider]",
-            "[data-sacred-message]",
+            "[data-sacred-verse]",
             "[data-sacred-closing]",
             "[data-sacred-signature]",
             "[data-sacred-chapter]",

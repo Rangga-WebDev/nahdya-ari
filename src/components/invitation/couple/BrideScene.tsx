@@ -67,7 +67,7 @@ export function BrideScene() {
       <BotanicalCorner className={styles.brideBotanical} />
 
       <span className={styles.sceneIndex} data-bride-detail>
-        Portrait · 01
+        Mempelai · 01
       </span>
     </article>
   );

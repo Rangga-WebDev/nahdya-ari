@@ -72,6 +72,8 @@
   width: min(100%, 62rem);
 
   margin-inline: auto;
+
+  perspective: 1600px;
 }
 
 .sceneHeader {

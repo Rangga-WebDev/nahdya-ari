@@ -187,6 +187,10 @@
   max-width: 34rem;
 
   margin-inline: auto;
+
+  perspective: 1400px;
+
+  perspective-origin: 50% 45%;
 }
 
 .railLead,
@@ -279,15 +283,18 @@
 
   background: #f6d9a4;
 
-  will-change: clip-path;
+  transform-style: preserve-3d;
+
+  will-change: transform;
 }
 
 .cardPortrait .cardFrame {
   aspect-ratio: 0.75;
 }
 
+/* Sources are 2:3 portrait; a wider frame would crop ~47% of the photo away. */
 .cardLandscape .cardFrame {
-  aspect-ratio: 1.25;
+  aspect-ratio: 0.9;
 }
 
 .cardTall .cardFrame {

@@ -3,6 +3,11 @@ import Image from "next/image";
 
 import { invitation } from "@/lib/invitation";
 
+import {
+  GoldenDust,
+  LightRays,
+} from "@/components/invitation/effects/AmbientEffects";
+
 import styles from "./CoupleJourney.module.css";
 
 export function UnionScene() {
@@ -13,6 +18,10 @@ export function UnionScene() {
       className={`${styles.scene} ${styles.unionScene}`}
       data-union-scene
     >
+      <LightRays opacity={0.5} speed="88s" />
+
+      <GoldenDust count={30} intensity={0.85} />
+
       <div className={styles.unionGlow} data-union-glow aria-hidden="true" />
 
       <div className={styles.unionPortraits}>
@@ -41,7 +50,7 @@ export function UnionScene() {
 
       <div className={styles.unionContent} data-union-content>
         <p className={styles.unionEyebrow} data-union-eyebrow>
-          And so the story becomes one
+          Dan dua kisah pun menjadi satu
         </p>
 
         <div className={styles.unionNames}>
@@ -65,11 +74,11 @@ export function UnionScene() {
         </div>
 
         <p className={styles.unionCopy} data-union-copy>
-          Two journeys.
+          Dua perjalanan.
           <br />
-          One home.
+          Satu rumah.
           <br />
-          One forever.
+          Satu selamanya.
         </p>
       </div>
 

@@ -18,28 +18,28 @@ export function RSVPResult({ submission, onReset }: RSVPResultProps) {
     <div className={styles.result} role="status">
       <span className={styles.resultLine} aria-hidden="true" />
 
-      <p className={styles.resultEyebrow}>Thank You</p>
+      <p className={styles.resultEyebrow}>Terima Kasih</p>
 
       <p className={styles.resultTitle}>
         {submission.attendance
-          ? "Your presence means the world to us."
-          : "Thank you for letting us know."}
+          ? "Kehadiran Anda sangat berarti bagi kami."
+          : "Terima kasih telah mengabari kami."}
       </p>
 
       <p className={styles.resultMessage}>
         {submission.attendance
-          ? `We have reserved a place for ${submission.guestName}${
+          ? `Kami telah menyiapkan tempat untuk ${submission.guestName}${
               submission.guestCount > 1
-                ? ` and ${submission.guestCount - 1} more.`
+                ? ` dan ${submission.guestCount - 1} orang lainnya.`
                 : "."
             }`
-          : `We will keep ${submission.guestName} in our thoughts on the day.`}
+          : `Kami akan tetap mendoakan ${submission.guestName} dari kejauhan.`}
       </p>
 
       <p className={styles.resultSignature}>{monogram}</p>
 
       <button type="button" className={styles.quietAction} onClick={onReset}>
-        Change my response
+        Ubah jawaban saya
       </button>
     </div>
   );

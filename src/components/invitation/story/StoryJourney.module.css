@@ -331,6 +331,10 @@
 
   justify-self: center;
 
+  perspective: 1500px;
+
+  perspective-origin: 50% 50%;
+
   will-change: transform;
 }
 

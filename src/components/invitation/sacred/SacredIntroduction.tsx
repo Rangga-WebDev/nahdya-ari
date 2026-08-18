@@ -2,6 +2,12 @@
 
 import { invitation } from "@/lib/invitation";
 
+import {
+  GoldenDust,
+  LightRays,
+  ShimmerSweep,
+} from "@/components/invitation/effects/AmbientEffects";
+
 import styles from "./SacredIntroduction.module.css";
 
 export function SacredIntroduction() {
@@ -9,9 +15,15 @@ export function SacredIntroduction() {
 
   const groomInitial = invitation.groom.firstName.charAt(0);
 
+  const verse = invitation.introduction.verse;
+
   return (
     <section className={styles.sacred} data-sacred-root>
+      <LightRays opacity={0.5} speed="90s" />
+
       <div className={styles.glow} data-sacred-glow aria-hidden="true" />
+
+      <GoldenDust count={22} intensity={0.55} />
 
       <div className={styles.grain} aria-hidden="true" />
 
@@ -66,9 +78,21 @@ export function SacredIntroduction() {
           <span />
         </div>
 
-        <p className={styles.message} data-sacred-message>
-          {invitation.introduction.message}
-        </p>
+        <figure className={styles.verse} data-sacred-verse>
+          <ShimmerSweep speed="9s" />
+
+          <p className={styles.verseArabic} lang="ar" dir="rtl">
+            {verse.arabic}
+          </p>
+
+          <blockquote className={styles.verseTranslation}>
+            {verse.translation}
+          </blockquote>
+
+          <figcaption className={styles.verseReference}>
+            {verse.reference}
+          </figcaption>
+        </figure>
 
         <p className={styles.closing} data-sacred-closing>
           {invitation.introduction.closing}
@@ -84,7 +108,7 @@ export function SacredIntroduction() {
       </div>
 
       <p className={styles.chapter} data-sacred-chapter>
-        Chapter I · The Beginning
+        Bab I · Pembuka
       </p>
     </section>
   );

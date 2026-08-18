@@ -14,11 +14,15 @@ import { InteractionJourney } from "@/components/invitation/interaction/Interact
 
 import { OpeningSequence } from "@/components/invitation/opening/OpeningSequence";
 
+import { EnvelopeOverture } from "@/components/invitation/overture/EnvelopeOverture";
+
 import { StoryJourney } from "@/components/invitation/story/StoryJourney";
 
 export default function Home() {
   return (
     <main>
+      <EnvelopeOverture />
+
       <OpeningSequence />
 
       <CoupleJourney />

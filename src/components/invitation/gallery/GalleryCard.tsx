@@ -26,7 +26,7 @@ export function GalleryCard({ item, index, onOpen }: GalleryCardProps) {
         type="button"
         className={styles.cardTrigger}
         onClick={() => onOpen(index)}
-        aria-label={`Open memory ${number} — ${item.alt}`}
+        aria-label={`Buka kenangan ${number} — ${item.alt}`}
       >
         <span className={styles.cardFrame} data-gallery-card-frame>
           <span className={styles.cardMedia} data-gallery-card-media>
@@ -51,7 +51,7 @@ export function GalleryCard({ item, index, onOpen }: GalleryCardProps) {
           <span className={styles.cardGrain} aria-hidden="true" />
 
           <span className={styles.cardView} aria-hidden="true">
-            View
+            Lihat
           </span>
         </span>
       </button>

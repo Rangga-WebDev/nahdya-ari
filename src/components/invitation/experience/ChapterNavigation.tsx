@@ -51,7 +51,7 @@ export function ChapterNavigation() {
 
   return (
     <>
-      <nav className={styles.rail} aria-label="Chapters">
+      <nav className={styles.rail} aria-label="Daftar bab">
         <ul>
           {chapters.map((chapter, index) => (
             <li key={chapter.id}>
@@ -87,7 +87,7 @@ export function ChapterNavigation() {
         </span>
 
         <span className={styles.visuallyHidden}>
-          {open ? "Close chapters" : "Open chapters"}
+          {open ? "Tutup daftar bab" : "Buka daftar bab"}
         </span>
       </button>
 
@@ -96,7 +96,7 @@ export function ChapterNavigation() {
         className={`${styles.panel} ${open ? styles.panelOpen : ""}`}
         hidden={!open}
       >
-        <p className={styles.panelEyebrow}>Chapters</p>
+        <p className={styles.panelEyebrow}>Daftar Bab</p>
 
         <button
           type="button"
