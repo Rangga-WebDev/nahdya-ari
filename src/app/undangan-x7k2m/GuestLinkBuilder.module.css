@@ -1,0 +1,457 @@
+/** @format */
+
+.page {
+  min-height: 100svh;
+
+  padding: clamp(1.5rem, 5vw, 4rem) var(--page-padding) clamp(5rem, 12vh, 8rem);
+
+  background: var(--canvas);
+
+  color: var(--ink);
+}
+
+.shell {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: clamp(1.2rem, 3vh, 2rem);
+
+  width: min(100%, 56rem);
+
+  margin-inline: auto;
+}
+
+/* =========================================================
+   HEAD
+   ========================================================= */
+
+.eyebrow {
+  margin: 0;
+
+  font-size: 0.68rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  color: var(--gold-deep);
+}
+
+.title {
+  margin: 0.6rem 0 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.lead,
+.warn {
+  margin: 0.8rem 0 0;
+
+  max-width: 46rem;
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+
+  color: var(--muted);
+}
+
+.warn {
+  padding: 0.75rem 0.95rem;
+
+  border-left: 2px solid var(--gold);
+
+  background: rgba(194, 160, 95, 0.1);
+
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.shell code {
+  padding: 0.1em 0.35em;
+
+  border-radius: 0.3rem;
+
+  background: var(--canvas-deep);
+
+  font-size: 0.92em;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  padding: clamp(1.1rem, 3vw, 1.8rem);
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-md);
+
+  background: var(--canvas-warm);
+}
+
+.form {
+  display: grid;
+
+  gap: 0.9rem;
+
+  grid-template-columns: 1fr;
+}
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+
+  color: var(--ink-soft);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+
+  padding: 0.8rem 0.9rem;
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--canvas-warm);
+
+  color: var(--ink);
+
+  font-size: 0.95rem;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--gold);
+
+  outline-offset: 1px;
+}
+
+.panel {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.9rem;
+
+  padding-top: 0.4rem;
+
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary,
+.ghost,
+.danger {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 2.75rem;
+
+  padding: 0.6rem 1.15rem;
+
+  border-radius: var(--radius-pill);
+
+  cursor: pointer;
+
+  font-family: var(--font-jakarta), sans-serif;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+
+  white-space: nowrap;
+
+  transition:
+    background 240ms var(--ease-editorial),
+    border-color 240ms var(--ease-editorial),
+    color 240ms var(--ease-editorial);
+}
+
+.primary {
+  border: 1px solid var(--ink);
+
+  background: var(--ink);
+
+  color: var(--canvas);
+}
+
+.primary:hover {
+  background: var(--ink-soft);
+
+  border-color: var(--ink-soft);
+}
+
+.ghost {
+  border: 1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--ink-soft);
+}
+
+.ghost:hover {
+  border-color: var(--gold);
+
+  color: var(--ink);
+}
+
+.danger {
+  border: 1px solid transparent;
+
+  background: transparent;
+
+  color: #9a3b32;
+}
+
+.danger:hover {
+  border-color: rgba(154, 59, 50, 0.4);
+}
+
+.tools {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.listHead {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 0.8rem;
+}
+
+.listTitle {
+  margin: 0;
+
+  font-family: var(--font-cormorant), serif;
+
+  font-size: 1.35rem;
+
+  font-weight: 500;
+}
+
+.empty {
+  margin: 0;
+
+  font-size: 0.88rem;
+
+  line-height: 1.6;
+
+  color: var(--muted);
+}
+
+.list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.row {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--canvas);
+}
+
+.rowMain {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 0.7rem;
+
+  min-width: 0;
+}
+
+.rowIndex {
+  flex-shrink: 0;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  color: var(--gold-deep);
+}
+
+.rowText {
+  min-width: 0;
+}
+
+.rowName {
+  margin: 0;
+
+  font-size: 0.98rem;
+
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+.rowLink {
+  margin: 0.25rem 0 0;
+
+  font-size: 0.74rem;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+
+  overflow-wrap: anywhere;
+}
+
+.rowActions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+}
+
+.rowActions .primary,
+.rowActions .ghost,
+.rowActions .danger {
+  min-height: 2.5rem;
+
+  padding: 0.5rem 0.95rem;
+
+  font-size: 0.72rem;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.notice {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+
+  z-index: var(--z-overlay);
+
+  margin: 0;
+
+  padding: 0.7rem 1.2rem;
+
+  border-radius: var(--radius-pill);
+
+  background: var(--ink);
+
+  color: var(--canvas);
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  transform: translateX(-50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 280ms var(--ease-editorial);
+}
+
+.notice:not(:empty) {
+  opacity: 1;
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 720px) {
+  .form {
+    grid-template-columns: 1fr 14rem auto;
+
+    align-items: end;
+  }
+
+  .row {
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .rowActions {
+    flex-shrink: 0;
+  }
+}
