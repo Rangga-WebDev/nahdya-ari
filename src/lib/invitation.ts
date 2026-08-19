@@ -248,7 +248,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-03",
-        image: "/art/gallery/memory-02.webp",
+        image: "/art/gallery/memory-09.webp",
         alt: "Potret tenang Nahdya dan Ari",
         year: "2024",
         caption: "Hangat yang lahir dari hari-hari biasa.",
@@ -278,11 +278,41 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-06",
-        image: "/art/gallery/memory-06.webp",
+        image: "/art/gallery/memory-10.webp",
         alt: "Potret prewedding Nahdya dan Ari",
         year: "2026",
         location: "Poso",
         caption: "Tepat sebelum selamanya dimulai.",
+        size: "tall",
+      },
+
+      {
+        id: "memory-07",
+        image: "/art/gallery/memory-07.webp",
+        alt: "Nahdya dan Ari berdiri berdampingan",
+        year: "2026",
+        location: "Poso",
+        caption: "Berdiri berdampingan, seperti seterusnya.",
+        size: "portrait",
+      },
+
+      {
+        id: "memory-08",
+        image: "/art/gallery/memory-08.webp",
+        alt: "Momen kebersamaan Nahdya dan Ari",
+        year: "2026",
+        caption: "Diam yang terasa cukup.",
+        size: "landscape",
+        objectPosition: "50% 40%",
+      },
+
+      {
+        id: "memory-09",
+        image: "/art/gallery/memory-11.webp",
+        alt: "Potret Nahdya dan Ari menjelang hari pernikahan",
+        year: "2026",
+        location: "Poso",
+        caption: "Menuju hari yang lama kami tunggu.",
         size: "tall",
       },
     ],
@@ -422,7 +452,7 @@ export const invitation: InvitationData = {
 
     author: "Nahdya & Ari",
 
-    image: "/art/gallery/memory-06.webp",
+    image: "/art/gallery/memory-09.webp",
 
     objectPosition: "50% 40%",
   },

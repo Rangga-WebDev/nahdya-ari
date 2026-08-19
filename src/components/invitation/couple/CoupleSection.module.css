@@ -122,6 +122,14 @@
   object-fit: cover;
 }
 
+/* Scales in on the subject of a full-length frame. Kept on the `scale`
+   property so it composes with the parallax GSAP writes to `transform`. */
+.portraitImageZoom {
+  scale: 1.75;
+
+  transform-origin: 62% 38%;
+}
+
 .portraitFallback {
   display: grid;
 

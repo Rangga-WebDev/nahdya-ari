@@ -94,7 +94,7 @@ export function VerseSection() {
         <div className={styles.mat} data-verse-plate>
           <div className={styles.matInner}>
             <Image
-              src="/art/closing/couple.webp"
+              src="/art/gallery/memory-02.webp"
               alt={`${invitation.bride.firstName} dan ${invitation.groom.firstName}`}
               fill
               sizes="(max-width: 768px) 90vw, 26rem"

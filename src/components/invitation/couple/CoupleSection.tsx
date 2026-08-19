@@ -85,14 +85,24 @@ export function CoupleSection() {
             &amp;
           </span>
 
-          <PersonBlock person={invitation.groom} label="Putra dari" />
+          <PersonBlock person={invitation.groom} label="Putra dari" zoom />
         </div>
       </div>
     </section>
   );
 }
 
-function PersonBlock({ person, label }: { person: Person; label: string }) {
+function PersonBlock({
+  person,
+  label,
+  zoom = false,
+}: {
+  person: Person;
+  label: string;
+  /* Set when the source photograph is full-length, so the arch can crop in to
+     the same half-body framing as the other portrait. */
+  zoom?: boolean;
+}) {
   const handle = person.instagram?.replace(/^@/, "");
 
   return (
@@ -106,8 +116,14 @@ function PersonBlock({ person, label }: { person: Person; label: string }) {
               src={person.portrait}
               alt={person.fullName}
               fill
-              sizes="(max-width: 900px) 70vw, 24rem"
-              className={styles.portraitImage}
+              sizes={
+                zoom
+                  ? "(max-width: 900px) 112vw, 39rem"
+                  : "(max-width: 900px) 70vw, 24rem"
+              }
+              className={`${styles.portraitImage}${
+                zoom ? ` ${styles.portraitImageZoom}` : ""
+              }`}
             />
           ) : (
             <span className={styles.portraitFallback} aria-hidden="true">

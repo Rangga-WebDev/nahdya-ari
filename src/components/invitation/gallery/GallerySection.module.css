@@ -266,6 +266,42 @@
   aspect-ratio: 0.78;
 }
 
+/* 7 + 8 — a second pair, mirrored against the first */
+.plate:nth-child(7) {
+  width: 56%;
+
+  margin-top: clamp(3rem, 10vh, 5rem);
+
+  margin-left: auto;
+}
+
+.plate:nth-child(7) .frame {
+  aspect-ratio: 0.7;
+}
+
+.plate:nth-child(8) {
+  width: 46%;
+
+  margin-top: clamp(-4rem, -10vw, -2rem);
+
+  margin-left: 4%;
+}
+
+.plate:nth-child(8) .frame {
+  aspect-ratio: 0.74;
+}
+
+/* 9 — full bleed close */
+.plate:nth-child(9) {
+  width: 100%;
+
+  margin-top: clamp(2.6rem, 9vh, 4.4rem);
+}
+
+.plate:nth-child(9) .frame {
+  aspect-ratio: 0.76;
+}
+
 /* =========================================================
    DESKTOP — asymmetric editorial grid
    ========================================================= */
@@ -383,6 +419,39 @@
 
   .plate:nth-child(6) .frame {
     aspect-ratio: 0.86;
+  }
+
+  /* Wide frame, left. */
+  .plate:nth-child(7) {
+    grid-column: 1 / span 5;
+
+    margin-top: clamp(2rem, 5vw, 4rem) !important;
+  }
+
+  .plate:nth-child(7) .frame {
+    aspect-ratio: 1.28;
+  }
+
+  /* Tall portrait, right, hanging lower again. */
+  .plate:nth-child(8) {
+    grid-column: 7 / span 4;
+
+    margin-top: clamp(4rem, 9vw, 8rem) !important;
+  }
+
+  .plate:nth-child(8) .frame {
+    aspect-ratio: 0.72;
+  }
+
+  /* Wide closer, centred. */
+  .plate:nth-child(9) {
+    grid-column: 2 / span 8;
+
+    margin-top: clamp(2rem, 6vw, 5rem) !important;
+  }
+
+  .plate:nth-child(9) .frame {
+    aspect-ratio: 1.4;
   }
 }
 
