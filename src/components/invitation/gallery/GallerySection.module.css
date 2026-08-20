@@ -231,24 +231,24 @@
 }
 
 .plate:nth-child(4) {
-  width: 44%;
+  width: 54%;
 
-  margin-top: clamp(-4rem, -10vw, -2rem);
+  margin-top: clamp(1rem, -10vw, -2rem);
 
   margin-left: auto;
 
-  margin-right: 4%;
+  margin-right: 0;
 }
 
 .plate:nth-child(4) .frame {
-  aspect-ratio: 0.72;
+  aspect-ratio: 0.54;
 }
 
 /* 5 — inset left */
 .plate:nth-child(5) {
   width: 74%;
 
-  margin-top: clamp(3rem, 10vh, 5rem);
+  margin-top: clamp(2rem, 10vh, 5rem);
 }
 
 .plate:nth-child(5) .frame {
@@ -270,7 +270,7 @@
 .plate:nth-child(7) {
   width: 56%;
 
-  margin-top: clamp(3rem, 10vh, 5rem);
+  margin-top: clamp(2rem, 5vh, 5rem);
 
   margin-left: auto;
 }
@@ -280,9 +280,9 @@
 }
 
 .plate:nth-child(8) {
-  width: 46%;
+  width: 66%;
 
-  margin-top: clamp(-4rem, -10vw, -2rem);
+  margin-top: clamp(2rem, -10vw, -2rem);
 
   margin-left: 4%;
 }
@@ -300,6 +300,26 @@
 
 .plate:nth-child(9) .frame {
   aspect-ratio: 0.76;
+}
+
+/* 10 + 11 — new side-by-side pair */
+.plate:nth-child(10) {
+  width: 48%;
+  margin-top: clamp(3rem, 10vh, 5rem);
+}
+
+.plate:nth-child(10) .frame {
+  aspect-ratio: 0.74;
+}
+
+.plate:nth-child(11) {
+  width: 48%;
+  margin-top: clamp(-5rem, -60vw, -2.5rem);
+  margin-left: auto;
+}
+
+.plate:nth-child(11) .frame {
+  aspect-ratio: 0.74;
 }
 
 /* =========================================================
@@ -390,9 +410,9 @@
 
   /* Wide landscape crossing the centre. */
   .plate:nth-child(4) {
-    grid-column: 6 / span 6;
+    grid-column: 1 / span 6;
 
-    margin-top: clamp(3rem, 8vw, 7rem) !important;
+    margin-top: clamp(5rem, 8vw, 7rem) !important;
   }
 
   .plate:nth-child(4) .frame {
@@ -452,6 +472,25 @@
 
   .plate:nth-child(9) .frame {
     aspect-ratio: 1.4;
+  }
+
+  /* 10 + 11 — closing pair */
+  .plate:nth-child(10) {
+    grid-column: 2 / span 5;
+    margin-top: clamp(3rem, 7vw, 6rem) !important;
+  }
+
+  .plate:nth-child(10) .frame {
+    aspect-ratio: 0.82;
+  }
+
+  .plate:nth-child(11) {
+    grid-column: 7 / span 5;
+    margin-top: clamp(3rem, 7vw, 6rem) !important;
+  }
+
+  .plate:nth-child(11) .frame {
+    aspect-ratio: 0.82;
   }
 }
 

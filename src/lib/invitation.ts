@@ -248,7 +248,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-03",
-        image: "/art/gallery/memory-09.webp",
+        image: "/art/gallery/memory-17.webp",
         alt: "Potret tenang Nahdya dan Ari",
         year: "2024",
         caption: "Hangat yang lahir dari hari-hari biasa.",
@@ -267,13 +267,13 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-05",
-        image: "/art/gallery/memory-05.webp",
+        image: "/art/gallery/memory-16.webp",
         alt: "Nahdya dan Ari bersama",
         year: "2025",
         location: "Indonesia",
         caption: "Setiap musim membawa kami lebih dekat.",
         size: "landscape",
-        objectPosition: "0% 20%",
+        objectPosition: "50% 20%",
       },
 
       {
@@ -288,7 +288,7 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-07",
-        image: "/art/gallery/memory-07.webp",
+        image: "/art/gallery/memory-11.webp",
         alt: "Nahdya dan Ari berdiri berdampingan",
         year: "2026",
         location: "Poso",
@@ -308,12 +308,31 @@ export const invitation: InvitationData = {
 
       {
         id: "memory-09",
-        image: "/art/gallery/memory-11.webp",
+        image: "/art/gallery/memory-12.webp",
         alt: "Potret Nahdya dan Ari menjelang hari pernikahan",
         year: "2026",
         location: "Poso",
         caption: "Menuju hari yang lama kami tunggu.",
         size: "tall",
+      },
+
+      {
+        id: "memory-12",
+        image: "/art/gallery/memory-13.webp",
+        alt: "Nahdya dan Ari berdiri berdampingan",
+        year: "2026",
+        location: "Poso",
+        caption: "Berdiri berdampingan, seperti seterusnya.",
+        size: "portrait",
+      },
+      {
+        id: "memory-13",
+        image: "/art/gallery/memory-14.webp",
+        alt: "Nahdya dan Ari berdiri berdampingan",
+        year: "2026",
+        location: "Poso",
+        caption: "Berdiri berdampingan, seperti seterusnya.",
+        size: "portrait",
       },
     ],
 
