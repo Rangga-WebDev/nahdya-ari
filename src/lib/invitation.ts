@@ -381,7 +381,7 @@ export const invitation: InvitationData = {
         {
           id: "gift-bride",
           bank: "Bank BRI",
-          accountNumber: "520101042223543",
+          accountNumber: "520101042223534",
           accountName: "Nahdya Andini Setyaningrum Antu, S.E.",
         },
 
